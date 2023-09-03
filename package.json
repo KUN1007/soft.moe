@@ -1,0 +1,16 @@
+{
+  "name": "KUN1007.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs --openssl-legacy-provider",
+    "build": "vuepress build docs --openssl-legacy-provider"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.9.10"
+  }
+}
