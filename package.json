@@ -1,9 +1,21 @@
 {
+  "name": "kun-blog",
+  "private": false,
+  "version": "0.0.0",
+  "description": "KUN's moe moe blog, KUN IS THE CUTEST!",
+  "author": {
+    "name": "kun",
+    "email": "kungalgame@gamil.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KUN1007/KUN1007.github.io.git"
+  },
   "devDependencies": {
     "vitepress": "1.0.0-rc.20"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs --port 7777",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   }

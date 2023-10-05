@@ -11,8 +11,6 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logoLink: 'https://s3.bmp.ovh/imgs/2023/10/05/cddd4e44c4ebb899.png',
-
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
