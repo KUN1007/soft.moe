@@ -42,26 +42,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Show current directory
-        run: |
-          current_directory=$(pwd)
-          echo "Current directory: $current_directory"
-          ls
-
       - name: Build with VitePress
         run: pnpm build
-          touch .vitepress/dist/.nojekyll
-
-      - name: Show current directory
-        run: |
-          current_directory=$(pwd)
-          echo "Current directory: $current_directory"
-          ls -lha .vitepress/.temp
+          touch dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .vitepress/dist
+          path: dist
 
   # Deployment job
   deploy:

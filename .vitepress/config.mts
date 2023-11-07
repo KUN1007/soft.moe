@@ -6,6 +6,7 @@ export default defineConfig({
   description: "KUN's moe moe blog, KUN IS THE CUTEST!",
   base: '/',
   srcDir: 'articles',
+  outDir: '/dist',
   head: [
     ['link', { rel: 'icon', href: '/assets/favicon.ico' }],
     [
