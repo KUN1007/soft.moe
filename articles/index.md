@@ -6,6 +6,9 @@ hero:
   name: "KUN's Blog"
   text: "KUN's moe moe blog, KUN IS THE CUTEST!"
   tagline: KUN, Moe, CUTEST, animations, visual novel (galgame), programming
+  image:
+    src: /kun.webp
+    alt: Ark Order (方舟指令) - 鲲
   actions:
     - theme: brand
       text: Animations
