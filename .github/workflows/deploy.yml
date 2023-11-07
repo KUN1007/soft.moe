@@ -47,12 +47,6 @@ jobs:
           pnpm build
           touch dist/.nojekyll
 
-      - name: Show current directory
-        run: |
-          current_directory=$(pwd)
-          echo "Current directory: $current_directory"
-          ls -lha
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
