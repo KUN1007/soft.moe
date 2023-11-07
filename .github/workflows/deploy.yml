@@ -50,11 +50,18 @@ jobs:
 
       - name: Build with VitePress
         run: pnpm build
-          touch ./.vitepress/dist/.nojekyll
+          touch .vitepress/dist/.nojekyll
+
+      - name: Show current directory
+        run: |
+          current_directory=$(pwd)
+          echo "Current directory: $current_directory"
+          ls -lha .vitepress
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./.vitepress/dist
+          path: .vitepress/dist
 
   # Deployment job
   deploy:
