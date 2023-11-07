@@ -115,12 +115,12 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-1: var(--kungalgame-blue-5);
+  --vp-c-brand-2: var(--kungalgame-blue-4);
+  --vp-c-brand-3: var(--kungalgame-blue-5);
   --vp-c-brand-soft: var(--vp-c-indigo-soft);
 
-  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-1: var(--kungalgame-blue-4);
   --vp-c-tip-2: var(--vp-c-brand-2);
   --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
@@ -142,14 +142,24 @@
 
 :root {
   --vp-button-brand-border: transparent;
-  --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-text: var(--kungalgame-white);
+  --vp-button-brand-bg: var(--kungalgame-blue-4);
   --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-text: var(--kungalgame-white);
+  --vp-button-brand-hover-bg: var(--kungalgame-pink-4);
   --vp-button-brand-active-border: transparent;
-  --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-button-brand-active-text: var(--kungalgame-white);
+  --vp-button-brand-active-bg: var(--kungalgame-blue-4);
+
+  /* Home button alter */
+  --vp-button-alt-border: var(--kungalgame-blue-4);
+  --vp-button-alt-text: var(--kungalgame-blue-4);
+  --vp-button-alt-bg: var(--kungalgame-trans-blue-0);
+
+  /* Home button hover */
+  --vp-button-alt-hover-border: var(--kungalgame-blue-4);
+  --vp-button-alt-hover-text: var(--kungalgame-white);
+  --vp-button-alt-hover-bg: var(--kungalgame-blue-4);
 }
 
 /**
@@ -160,13 +170,13 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
-    var(--kungalgame-red-4),
-    var(--kungalgame-blue-4) 77%
+    var(--kungalgame-pink-3),
+    var(--kungalgame-blue-4)
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
-    var(--kungalgame-trans-red-4),
+    var(--kungalgame-pink-4),
     var(--kungalgame-trans-blue-4) 77%
   );
   --vp-home-hero-image-filter: blur(40px);
@@ -174,13 +184,13 @@
 
 @media (min-width: 640px) {
   :root {
-    --vp-home-hero-image-filter: blur(56px);
+    --vp-home-hero-image-filter: blur(52px);
   }
 }
 
 @media (min-width: 960px) {
   :root {
-    --vp-home-hero-image-filter: blur(72px);
+    --vp-home-hero-image-filter: blur(77px);
   }
 }
 
@@ -193,6 +203,8 @@
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+
+  --vp-c-bg-soft: var(--kungalgame-trans-blue-0) !important;
 }
 
 /**
@@ -200,5 +212,5 @@
  * -------------------------------------------------------------------------- */
 
 .DocSearch {
-  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+  --docsearch-primary-color: var(--kungalgame-blue-4) !important;
 }
