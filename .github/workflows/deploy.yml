@@ -41,6 +41,13 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: pnpm install
+
+      - name: Show current directory
+        run: |
+          current_directory=$(pwd)
+          echo "Current directory: $current_directory"
+          ls
+
       - name: Build with VitePress
         run: pnpm build
           touch ./.vitepress/dist/.nojekyll
