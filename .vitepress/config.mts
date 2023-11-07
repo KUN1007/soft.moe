@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "KUN's Blog",
   description: "KUN's moe moe blog, KUN IS THE CUTEST!",
-  base: '/',
+  srcDir: './articles',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   ignoreDeadLinks: true,
   lastUpdated: true,

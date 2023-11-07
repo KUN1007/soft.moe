@@ -14,8 +14,8 @@
     "vitepress": "1.0.0-rc.20"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs --port 7777",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:dev": "vitepress dev --host 127.0.0.1 --port 7777",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   }
 }
