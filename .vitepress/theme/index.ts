@@ -1,8 +1,10 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import Theme from 'vitepress/theme'
-import './light.css'
-import './dark.css'
+
+import './reset.scss'
+import './light.scss'
+import './dark.scss'
 
 import { inBrowser } from 'vitepress'
 import busuanzi from 'busuanzi.pure.js'
