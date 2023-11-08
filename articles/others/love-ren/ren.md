@@ -14,17 +14,17 @@
 ------
 > 前数年予独爱少女。自尘世以来，世人甚爱御姐。
 
-<img src="./image/2.jpg" width="300" alt="莲 ren レン">
+<img src="./image/3.jpg" width="300" alt="莲 ren レン">
 
 ------
 > 予独爱莲之出花海而不俗，濯可爱而不妖，小只可爱，软萌诱人，香远益清，亭亭玉立，可远观亦可连理焉。
 
-<img src="./image/3.jpg" width="300" alt="莲 ren レン">
+<img src="./image/4.jpg" width="300" alt="莲 ren レン">
 
 ------
 > 予谓莲，小只软萌者也；予谓莲，一生所爱者也；予谓莲，比翼双飞者也。
 
-<img src="./image/4.jpg" width="300" alt="莲 ren レン">
+<img src="./image/6.jpg" width="300" alt="莲 ren レン">
 
 ------
 > 噫！御姐之爱，色气风流者甚欢。
@@ -34,11 +34,9 @@
 ------
 > 莲之爱，同予者何人？
 
-<img src="./image/6.jpg" width="300" alt="莲 ren レン">
+<img src="./image/2.jpg" width="300" alt="莲 ren レン">
 
 > 萝莉之爱，宜乎众矣。
-
-------
 
 ## 总之就是非常可爱
 
@@ -72,3 +70,15 @@
 ## 总结
 
 ***结婚结婚结婚结婚结婚！！！！！！！！！！***
+
+## 来点莲图
+
+<img src="./image/Ren_01a.webp" alt="莲 ren レン">
+
+<br/>
+
+<img src="./image/Ren_03a.webp" alt="莲 ren レン">
+
+<br/>
+
+<img src="./image/Ren_04a.webp" alt="莲 ren レン">

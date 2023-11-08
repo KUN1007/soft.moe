@@ -11,7 +11,10 @@
     "url": "https://github.com/KUN1007/KUN1007.github.io.git"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.20"
+    "busuanzi.pure.js": "^1.0.3",
+    "sass": "^1.69.5",
+    "vitepress": "1.0.0-rc.20",
+    "vue": "^3.3.8"
   },
   "scripts": {
     "dev": "vitepress dev --host 127.0.0.1 --port 7777",
