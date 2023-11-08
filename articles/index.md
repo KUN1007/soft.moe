@@ -21,7 +21,8 @@ hero:
       link: /technology/kun-technology
     - theme: alt
       text: KUNGalgame
-      link: /kun-visualnovel-docs/kun-galgame
+      link: https://kungal.com
+      target: _blank
 
 features:
   - title: Animations
