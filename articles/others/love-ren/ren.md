@@ -1,6 +1,6 @@
 # 爱莲说
 
-#### by: [KUN](https://github.com/KUN1007)
+**by: [KUN](https://github.com/KUN1007)**
 
 ## 介绍
 
