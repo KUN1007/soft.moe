@@ -103,7 +103,7 @@
 > 游戏名: 不败世界与终焉之花 / 永不枯萎的世界与终结之花 (枯れない世界と終わる花)
 > > 人物名: 莲 ren レン
 > 
-> [Wikipedia](https://zh.wikipedia.org/zh-hans/%E6%B0%B8%E4%B8%8D%E6%9E%AF%E8%90%8E%E7%9A%84%E4%B8%96%E7%95%8C%E8%88%87%E7%B5%82%E7%B5%90%E4%B9%8B%E8%8A%B1)
+> [Wikipedia](https://ja.wikipedia.org/wiki/%E6%9E%AF%E3%82%8C%E3%81%AA%E3%81%84%E4%B8%96%E7%95%8C%E3%81%A8%E7%B5%82%E3%82%8F%E3%82%8B%E8%8A%B1)
 > 
 > [SWEET&TEA 官网](http://sweet.clearrave.co.jp/karehana/)
 
