@@ -49,7 +49,24 @@ export default defineConfig({
       { text: 'Technology', link: '/technology/kun-technology' },
     ],
 
-    sidebar: [],
+    sidebar: [
+      {
+        text: 'Technology',
+        collapsed: true,
+        items: [
+          {
+            text: 'Production',
+            collapsed: true,
+            items: [
+              {
+                text: '对于一次网站 UI 更新的认识',
+                link: '/technology/production/kun-ui.md',
+              },
+            ],
+          },
+        ],
+      },
+    ],
 
     socialLinks: [
       {

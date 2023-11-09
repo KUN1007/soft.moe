@@ -145,6 +145,8 @@
   --vp-c-bg-elv: var(--kungalgame-white);
   --vp-c-bg-soft: var(--kungalgame-trans-blue-1);
 
+  --vp-c-default-soft: var(--kungalgame-trans-blue-0);
+
   --vp-c-border: var(--kungalgame-blue-4);
 
   --vp-c-text-1: var(--kungalgame-font-color-2);
@@ -156,11 +158,16 @@
 
   --vp-code-line-highlight-color: var(--kungalgame-trans-blue-2);
 
+  --vp-nav-bg-color: var(--kungalgame-trans-white-9);
+
   /* Mobile panel */
   --vp-nav-screen-bg-color: var(--kungalgame-trans-white-2);
 
   /* Search bg color */
   --vp-local-search-bg: var(--kungalgame-blue-0);
+
+  /* Code */
+  --vp-code-bg: var(--kungalgame-trans-blue-1);
 }
 
 /**
