@@ -4,11 +4,11 @@
 
 ## 描述
 
-关于我写的论坛 [KUN Visual Novel (鲲 Galgame)](https://github.com/KUN1007/kun-galgame-vue)，今天我的好朋友 [Asuka-san](https://asukaminato.pages.dev/) 和 [Haruki-san](i.plr.moe)，发现了几处不合理的地方，这里作以记录。
+关于我写的论坛 [KUN Visual Novel (鲲 Galgame)](https://github.com/KUN1007/kun-galgame-vue)，今天我的好朋友 [Asuka-san](https://asukaminato.pages.dev/) 和 [Haruki-san](https://i.plr.moe)，发现了几处不合理的地方，这里作以记录。
 
 
 
-我的朋友 Asuka-san 推荐了我一本好书 [Dont Make Me Think (不要让我思考)](https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515) , 这是一本关于 Web 设计方面的书籍，有部分观点很有道理，这里一并说明。
+我的朋友 Asuka-san 推荐了我一本好书 [Don't Make Me Think (不要让我思考)](https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515) , 这是一本关于 Web 设计方面的书籍，有部分观点很有道理，这里一并说明。
 
 
 
