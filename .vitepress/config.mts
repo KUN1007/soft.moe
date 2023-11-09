@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/',
   srcDir: 'articles',
   outDir: './dist',
-  sitemap: { hostname: 'https://soft.moe' },
+  // sitemap: { hostname: 'https://soft.moe' },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
