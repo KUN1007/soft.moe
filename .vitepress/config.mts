@@ -64,6 +64,16 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: 'Algorithm',
+            collapsed: true,
+            items: [
+              {
+                text: '关于图的认识',
+                link: '/technology/algorithm/kun-graph.md',
+              },
+            ],
+          },
         ],
       },
     ],
