@@ -14,3 +14,10 @@
 .VPNavBar .container {
   backdrop-filter: blur(5px);
 }
+
+/* Mobile */
+.VPLocalNav,
+.VPNavScreen,
+.VPSidebar {
+  backdrop-filter: blur(5px);
+}
