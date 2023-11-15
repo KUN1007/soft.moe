@@ -30,7 +30,7 @@
   background-attachment: fixed;
 }
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 767px) {
   #app {
     background-image: url('/bg/ren-mini.webp');
   }
