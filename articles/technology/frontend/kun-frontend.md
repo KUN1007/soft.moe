@@ -486,7 +486,7 @@ Practice makes your perfect.
 
 ## 感谢
 
-感谢 yurzhang(https://yurzhang.com) 的纠错！
+感谢 [yurzhang](https://yurzhang.com) 的纠错！
 
 知道刚才我都以为 `Vite` 是 `Rust` 写的。。。也不知道什么时候知道的。。
 
