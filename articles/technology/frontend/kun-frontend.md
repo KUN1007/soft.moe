@@ -170,7 +170,7 @@ Practice makes your perfect.
 
 ***Vite***
 
-非常**快速**的构建工具，官网有很详细的说明，使用 Rust 编写
+非常**快速**的构建工具，官网有很详细的说明
 
 有一个坑，**打包出来的产物可能会和源代码不一样**，不过一般都可以解决
 
@@ -331,7 +331,7 @@ Practice makes your perfect.
 
 ### .NET Framework
 
-不要忽视 `MicroSoft` 的实力，我相信 `.NET Framework` 绝对不会比任何一个前端框架差到哪去，而且它还是跨端的
+不要忽视 `MicroSoft` 的实力，我相信 `ASP.NET` 绝对不会比任何一个前端框架差到哪去，而且它还是跨端的
 
 它的不好在于和 `MicroSoft` 深度绑定，接触之后我想之后的几年里都离不开 `Visual Studio` 了
 
@@ -483,6 +483,12 @@ Practice makes your perfect.
 ## 谨记官网
 
 几乎任何技术的官网都是最佳实践，需要经常翻阅
+
+## 感谢
+
+感谢 yurzhang(https://yurzhang.com) 的纠错！
+
+知道刚才我都以为 `Vite` 是 `Rust` 写的。。。也不知道什么时候知道的。。
 
 
 ## 关于我
