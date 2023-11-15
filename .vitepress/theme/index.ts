@@ -8,7 +8,9 @@ import './dark.scss'
 
 import { inBrowser } from 'vitepress'
 import busuanzi from 'busuanzi.pure.js'
+
 import Analytics from '../components/analytics/Analytics.vue'
+import Friends from '../components/friends/Friends.vue'
 
 export default {
   extends: Theme,
@@ -16,6 +18,7 @@ export default {
     return h(Theme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'doc-bottom': () => h(Analytics),
+      'home-features-after': () => h(Friends),
     })
   },
   enhanceApp({ app, router, siteData }) {
