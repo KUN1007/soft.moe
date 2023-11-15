@@ -11,12 +11,14 @@ import busuanzi from 'busuanzi.pure.js'
 
 import Analytics from '../components/analytics/Analytics.vue'
 import Friends from '../components/friends/Friends.vue'
+import TouchFish from '../components/doc-after/TouchFish.vue'
 
 export default {
   extends: Theme,
   Layout: () => {
     return h(Theme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
+      'doc-after': () => h(TouchFish),
       'doc-bottom': () => h(Analytics),
       'home-features-after': () => h(Friends),
     })

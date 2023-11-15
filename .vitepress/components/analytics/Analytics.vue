@@ -44,4 +44,10 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .root {
+    margin-top: 50px;
+  }
+}
 </style>
