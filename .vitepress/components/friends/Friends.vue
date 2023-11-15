@@ -4,22 +4,24 @@ import { friendList } from './friendList'
 
 <template>
   <div class="root">
-    <span class="title">Friends</span>
+    <div class="friends-container">
+      <span class="title">Friends</span>
 
-    <div class="container">
-      <a
-        class="friend"
-        v-for="(loli, index) in friendList"
-        :key="index"
-        :href="loli.link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img :src="loli.avatar" :alt="loli.name.charAt(0)" />
+      <div class="container">
+        <a
+          class="friend"
+          v-for="(loli, index) in friendList"
+          :key="index"
+          :href="loli.link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img :src="loli.avatar" :alt="loli.name.charAt(0)" />
 
-        <span>{{ loli.name }}</span>
-        <span>{{ loli.introduction }}</span>
-      </a>
+          <span>{{ loli.name }}</span>
+          <span>{{ loli.introduction }}</span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +30,11 @@ import { friendList } from './friendList'
 .root {
   padding: 0 64px;
   padding-top: 64px;
+}
+
+.friends-container {
+  margin: 0 auto;
+  max-width: 1152px;
 }
 
 .title {
