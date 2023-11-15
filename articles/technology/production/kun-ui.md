@@ -4,7 +4,7 @@
 
 ## 描述
 
-关于我写的论坛 [KUN Visual Novel (鲲 Galgame)](https://github.com/KUN1007/kun-galgame-vue)，今天我的好朋友 [Asuka-san](https://asukaminato.pages.dev/) 和 [Haruki-san](https://i.plr.moe)，发现了几处不合理的地方，这里作以记录。
+关于我写的论坛 [KUN Visual Novel (鲲 Galgame)](https://github.com/KUN1007/kun-galgame-vue)，今天我的好朋友 [Asuka-san](https://asukaminato.eu.org/) 和 [Haruki-san](https://i.plr.moe)，发现了几处不合理的地方，这里作以记录。
 
 
 

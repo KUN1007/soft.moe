@@ -10,7 +10,7 @@ export const friendList: FriendList[] = [
     avatar: '/avatar/asuka.webp',
     name: 'Asuka Minato',
     introduction: '',
-    link: 'https://asukaminato.pages.dev/',
+    link: 'https://asukaminato.eu.org/',
   },
   {
     avatar: '/avatar/haruki.webp',
