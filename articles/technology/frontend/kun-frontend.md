@@ -329,7 +329,7 @@ Practice makes your perfect.
 
 当然，大前端怎么能不会点后端呢 hhh，本质上 `Web` 是不分家的
 
-### .NET Framework
+### ASP.NET
 
 不要忽视 `MicroSoft` 的实力，我相信 `ASP.NET` 绝对不会比任何一个前端框架差到哪去，而且它还是跨端的
 
@@ -488,7 +488,7 @@ Practice makes your perfect.
 
 感谢 [yurzhang](https://yurzhang.com) 的纠错！
 
-知道刚才我都以为 `Vite` 是 `Rust` 写的。。。也不知道什么时候知道的。。
+直到刚才我都以为 `Vite` 是 `Rust` 写的。。。也不知道什么时候知道的。。
 
 
 ## 关于我
