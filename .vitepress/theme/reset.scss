@@ -21,3 +21,17 @@
 .VPSidebar {
   backdrop-filter: blur(5px);
 }
+
+#app {
+  background-image: url('/bg/ren.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  #app {
+    background-image: url('/bg/ren-mini.webp');
+  }
+}

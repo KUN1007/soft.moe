@@ -19,7 +19,16 @@ import { friendList } from './friendList'
           <img :src="loli.avatar" :alt="loli.name.charAt(0)" />
 
           <span>{{ loli.name }}</span>
-          <span>{{ loli.introduction }}</span>
+        </a>
+
+        <a
+          href="/others/friends/kun-friend.html"
+          class="friend"
+          rel="noopener noreferrer"
+        >
+          <img src="/avatar/kun.webp" alt="KUN's friends" />
+
+          <span>Join Us</span>
         </a>
       </div>
     </div>
@@ -51,6 +60,7 @@ import { friendList } from './friendList'
   align-items: center;
   position: relative;
   margin: 32px;
+  margin-bottom: 0;
   margin-left: 0;
   overflow: hidden;
   border-radius: 10px;
@@ -66,13 +76,31 @@ import { friendList } from './friendList'
   }
 
   span {
-    padding: 10px 0;
-    padding-left: 50px;
+    padding: 10px 50px;
   }
 
   &:hover {
     transition: all 0.2s;
     box-shadow: var(--kungalgame-shadow-1);
+  }
+
+  &:last-child {
+    span {
+      color: var(--kungalgame-blue-4);
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .root {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .root {
+    padding: 0 24px;
+    padding-top: 64px;
   }
 }
 </style>

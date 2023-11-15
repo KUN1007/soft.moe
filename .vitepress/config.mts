@@ -86,6 +86,22 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: 'Others',
+        collapsed: true,
+        items: [
+          {
+            text: 'Friends',
+            collapsed: true,
+            items: [
+              {
+                text: '我的朋友们',
+                link: '/others/friends/kun-friend.md',
+              },
+            ],
+          },
+        ],
+      },
     ],
 
     socialLinks: [

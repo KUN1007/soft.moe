@@ -42,5 +42,6 @@ features:
     link: /others/love-ren/ren
   - title: Others
     details: About me and my Life.
+    link: /others/kun
 ---
 
