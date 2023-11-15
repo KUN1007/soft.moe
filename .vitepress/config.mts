@@ -74,6 +74,16 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: 'Frontend',
+            collapsed: true,
+            items: [
+              {
+                text: 'Web 前端概览',
+                link: '/technology/frontend/kun-frontend.md',
+              },
+            ],
+          },
         ],
       },
     ],
