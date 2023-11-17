@@ -10,7 +10,7 @@
 
 前端采用了: Vite, Vue3 Composition API + Setup, Typescript, Pinia, SCSS, Vue-router, Milkdown, vue-i18n, indexdb
 
-后端采用了: Webpack, Babel, Koa, Typescript, Redis, Mongoose, Mongodb, JWT
+后端采用了: Nodejs, Webpack, Babel, Koa, Typescript, Redis, Mongoose, Mongodb, JWT, bcrypt, nodemailer, sharp
 
 ## 前端
 
@@ -18,7 +18,7 @@
 
 前端选用 Vite 的原因是它的快速，以及对 Vue 的第一优先级支持
 
-插件上，仅仅对其集成了基本的 Vue 插件，以及一个分析打包大小的插件
+插件上，仅仅对其集成了基本的 Vue 插件，以及一个分析打包大小的插件 `rollup-plugin-visualizer`
 
 配置上，还对其 host, port 等基本设置进行了配置, 默认为 127.0.0.1:1007
 
@@ -155,4 +155,99 @@ i18n 主要位于 `src/language` 目录下
 
 ## 后端
 
+### Nodejs
+
+我们的后端没有使用常规的 `Java`, 原因是 `Java` 有些过饱和了
+
+我们对 `Nodejs` 进行了 `Typescript` 支持
+
+我们使用了以下 `Nodejs` package
+
+* formidable, 用于解析表单
+* node-schedule, 定时任务
+* nodemailer, nodejs 邮件服务
+* nodemailer-smtp-transport, 用于兼容 nodejs 以及 Gmail
+
+我们的后端总体是传统的 MVC 架构
+
+### Webpack
+
+我们的后端使用了 Webpack 作为打包工具, 配置了总共 `base.js`, `dev.js`, `prod.js` 三个配置文件, 用于支持开发环境和生产环境的不同需求
+
+我们还对 Webpack 集成了 `TerserWebpackPlugin`, 优化打包大小, 以及热重载插件 `nodemon`, 转译插件 `babel` 等优化体验的工具
+
+由于某些原因, 我们的 webpack 配置文件目前还是 `js`, 之后会改为 `ts`
+
+
+### Babel
+
+我们的后端使用了 babel 将 js module 的引入由 `require` 变为了 `import`, 并且使其适配更健壮
+
+### Koa
+
+Koa 框架是一个 `Nodejs` 的后端框架, 使用它的目的是 `Koa` 听起来像 `Koi` 所以比较萌
+
+我们对其进行了全面的 `Typescript` 支持
+
+我们使用了以下的中间件
+
+* koa-body, 解析请求体
+* koa-combine-routers, 结合 koa-router
+* koa-mount, 挂载目录
+* koa-route, koa 路由
+* koa-static, koa 静态托管
+* koa2-connect-history-api-fallback, 页面刷新 404
+
+### Typescript
+
+我们后端的 `src` 资源文件夹全面支持 `Typescript`, 主要体现在以下几个方面
+
+* Interface
+* Class. private
+* as. 类型断言
+* declare module
+
+我们使用了 `@types` 安装了许多相关 `node package` 的类型
+
+### Redis
+
+我们集成了 `Redis` 作为了缓冲数据库, 提升性能, 项目中使用了更适合我们使用场景的 `ioredis`
+
+redis 的配置文件主要位于 `src/config/redisConfig.ts`
+
+我们封装了常用的 `get`, `set`, `del` 操作, 用于在其它地方使用 redis
+
+在项目中，我们的 redis 主要用于邮箱验证码缓存，单点限流 (单用户多次操作限制)
+
+### Mongoose
+
+Mongoose 是一个 `Nodejs` 中用于操作 `mongodb` 的驱动，或许您可能了解 `ORM` ，`mongoose` 就好比 `Hibernate`, `MyBatis` 之类的东东
+
+我们的项目在 `src/model` 文件夹中定义了 `Mongoose` 的 `schema`, 并使用 `Typescript` 规范了其 types
+
+### Mongodb
+
+Mongodb 是一个非关系型数据库, 由于是 Web 论坛, 并且使用 `Nodejs` 作为后端, 使用 `Mongodb` 是一个合理的决定
+
+在项目中, 我们使用 `Mongoose` 操作 `Mongodb`, 这个配置位于 `src/db/connections.ts`
+
+我们使用了 `dot-env` 来安全地读取环境变量, 所以 `mongodb` 的链接、端口等位于项目根目录的 .env 文件中
+
+### JWT
+
+我们是登陆制的论坛, 目前不开放浏览, 后续会开放浏览。对于用户的鉴权，我们使用 `JWT` 作为鉴权手段
+
+我们使用了 `access-token` 和 `refresh-token` 两个 `token` 作为安全的访问手段, 用户在登陆后会获取 `token`, `token` 会在后端存储在 `redis` 中
+
+### Bcrypt
+
+将用户的密码直接保存在数据库中是糟糕的实践，我们将用户的密码使用 `bcrypt` 加密存放在数据库中，增强安全性
+
+### Nodemailer
+
+用户的注册、找回密码等操作都需要邮箱验证，我们使用了 `nodemailer` 结合 `Gmail` 实现了邮件发送, 用在邮件服务中
+
+### Sharp
+
+用户的更改头像需要修改大小, 转换压缩等操作，我们使用了 `sharp` 处理用户的图片
 
