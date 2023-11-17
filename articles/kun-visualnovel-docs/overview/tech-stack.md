@@ -93,7 +93,7 @@ Pinia 是 Vue3 目前最推荐的状态管理工具，使用它是一个良好�
 
 在本项目中, router 的体现有以下几点
 
-* <RouterLink/>, <RouterView/>, 这是 Vue 自带的组件
+* `<RouterLink/>`, `<RouterView/>`, 这是 Vue 自带的组件
 * useRouter, 可以创建一个 router, 本项目中大多用于 router.push()
 * useRoute, 可以返回当前的路由实例
 * onBeforeRouterLeave
