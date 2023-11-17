@@ -43,7 +43,7 @@ export default defineConfig({
       { text: 'Animations', link: '/animations/kun-animations' },
       {
         text: 'KUNGalgame Doc',
-        link: '/kun-visualnovel-docs/kun-galgame',
+        link: '/kun-visualnovel-docs/kun-forum',
       },
       { text: 'Visual Novels', link: '/visualnovels/kun-visualnovels' },
       { text: 'Technology', link: '/technology/kun-technology' },
