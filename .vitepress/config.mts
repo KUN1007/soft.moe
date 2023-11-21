@@ -102,6 +102,10 @@ export default defineConfig({
                 text: '关于图的认识',
                 link: '/technology/algorithm/kun-graph.md',
               },
+              {
+                text: '二分图、欧拉图、哈密顿图',
+                link: '/technology/algorithm/kun-graph-2.md',
+              },
             ],
           },
           {
