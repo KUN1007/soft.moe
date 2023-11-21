@@ -4,7 +4,7 @@
 
 前端项目需要电脑具有 `nodejs` 环境
 
-我们推荐使用 [`NVM`](/technology/frontend/kun-frontend) 安装 `Node`
+我们推荐使用 [`NVM`](/technology/frontend/kun-frontend#作为一名-web-开发人员-学习路线是什么) 安装 `Node`
 
 电脑安装 `Nodejs` 后, 我们推荐全局安装 `pnpm`
 

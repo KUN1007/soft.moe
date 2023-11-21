@@ -53,7 +53,7 @@ export default defineConfig({
       {
         text: 'KUN Visual Novel Docs',
         collapsed: true,
-        link: '/kun-visualnovel-docs/kun-form',
+        link: '/kun-visualnovel-docs/kun-forum',
         items: [
           {
             text: 'Overview',
@@ -69,14 +69,19 @@ export default defineConfig({
               },
               {
                 text: '技术栈介绍',
-                link: '/kun-visualnovel-docs/overview/tech-forum',
+                link: '/kun-visualnovel-docs/overview/tech-stack',
               },
             ],
           },
           {
             text: 'Configuration',
             collapsed: true,
-            items: [{ text: 'setup', link: '/kun-visualnovel-docs' }],
+            items: [
+              {
+                text: 'setup',
+                link: '/kun-visualnovel-docs/configuration/setup',
+              },
+            ],
           },
         ],
       },
