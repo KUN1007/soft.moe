@@ -24,13 +24,12 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 * [项目目的和背景](/kun-visualnovel-docs/overview/purpose)
 * [技术栈介绍](/kun-visualnovel-docs/overview/tech-stack)
 * [主要功能和模块概览](/kun-visualnovel-docs/overview/features)
-* [安装和配置](/kun-visualnovel-docs/overview/config)
 
 ### 开发环境配置指南（Node.js、Vite、Webpack等）
 
-* 各种依赖项的安装方法和版本要求
-* 数据库（MongoDB）和缓存（Redis）的安装和配置
-* 服务端（Koa）的设置和启动步骤
+* [开发环境配置要求](kun-visualnovel-docs/configuration/setup)
+* [数据库（MongoDB）和缓存（Redis）的安装和配置](kun-visualnovel-docs/configuration)
+* [服务端（Koa）的设置和启动步骤](kun-visualnovel-docs/configuration)
 
 ### 前端
 

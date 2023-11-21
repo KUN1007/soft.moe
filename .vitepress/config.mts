@@ -51,6 +51,36 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: 'KUN Visual Novel Docs',
+        collapsed: true,
+        link: '/kun-visualnovel-docs/kun-form',
+        items: [
+          {
+            text: 'Overview',
+            collapsed: true,
+            items: [
+              {
+                text: '项目目的和背景',
+                link: '/kun-visualnovel-docs/overview/purpose',
+              },
+              {
+                text: '项目目的和背景',
+                link: '/kun-visualnovel-docs/overview/features',
+              },
+              {
+                text: '技术栈介绍',
+                link: '/kun-visualnovel-docs/overview/tech-forum',
+              },
+            ],
+          },
+          {
+            text: 'Configuration',
+            collapsed: true,
+            items: [{ text: 'setup', link: '/kun-visualnovel-docs' }],
+          },
+        ],
+      },
+      {
         text: 'Technology',
         collapsed: true,
         items: [
