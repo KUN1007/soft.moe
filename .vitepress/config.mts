@@ -78,7 +78,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
-                text: 'setup',
+                text: '开发环境配置要求',
                 link: '/kun-visualnovel-docs/configuration/setup',
               },
             ],
