@@ -57,7 +57,7 @@ export default defineConfig({
         items: [
           {
             text: 'Overview',
-            collapsed: true,
+            collapsed: false,
             items: [
               {
                 text: '项目目的和背景',
@@ -75,7 +75,7 @@ export default defineConfig({
           },
           {
             text: 'Configuration',
-            collapsed: true,
+            collapsed: false,
             items: [
               {
                 text: '开发环境配置要求',
@@ -91,7 +91,7 @@ export default defineConfig({
         items: [
           {
             text: 'Production',
-            collapsed: true,
+            collapsed: false,
             items: [
               {
                 text: '对于一次网站 UI 更新的认识',
@@ -101,7 +101,7 @@ export default defineConfig({
           },
           {
             text: 'Algorithm',
-            collapsed: true,
+            collapsed: false,
             items: [
               {
                 text: '关于图的认识',
@@ -115,7 +115,7 @@ export default defineConfig({
           },
           {
             text: 'Frontend',
-            collapsed: true,
+            collapsed: false,
             items: [
               {
                 text: 'Web 前端概览',
@@ -131,11 +131,27 @@ export default defineConfig({
         items: [
           {
             text: 'Friends',
-            collapsed: true,
+            collapsed: false,
             items: [
               {
                 text: '我的朋友们',
                 link: '/others/friends/kun-friend.md',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        text: 'Visualnovels',
+        collapsed: true,
+        items: [
+          {
+            text: 'Koi',
+            collapsed: false,
+            items: [
+              {
+                text: 'Ting Dungeon (微小地牢)',
+                link: '/visualnovels/koi/tiny-dungeon',
               },
             ],
           },
