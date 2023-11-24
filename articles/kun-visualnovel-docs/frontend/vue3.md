@@ -340,8 +340,34 @@ Vue3 带来了几个内置组件，在我们的项目中均有涉及，这里介
 
 需要注意的是，Vue3 为了和现代框架的写法相似，将内置组件推荐全部以大驼峰命名，所以我们遵循这个实践
 
+本项目应用关键在 `src/layout/KUNGalgameAPP.vue` 这个组件
+
 ### <RouterView />
 
 路由的出口
+
+它还可以这样使用
+
+``` vue
+<template>
+  <!-- #default is shorthand for v-slot, route is the route, Component is a v-node -->
+    <RouterView #default="{ route, Component }">
+      <Transition
+        :enter-active-class="`animate__animated ${route.meta.transition}`"
+      >
+        <!-- ATTENTION! You must include a key here; otherwise
+          , Vue Router won't recognize page updates for the same page
+          , causing the page not to refresh -->
+        <Component :is="Component" :key="route.fullPath"></Component>
+      </Transition>
+    </RouterView>
+</template>
+```
+
+需要注意的是，#default 是 v-slot 的缩写，它可以把一个 `<Component>` 放入 `<RouterView>`
+
+这个方法可以应用于路由的过渡特效，可以通过在路由的 meta 区域添加某些字段来应用不同的过渡效果
+
+尤其需要注意的是，请给 `<Component>` 加上 `:key`，以表示其唯一性，否则 `vue-router` 将会识别不到路由的变化，导致页面不更新
 
 ### 

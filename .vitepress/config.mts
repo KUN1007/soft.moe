@@ -81,6 +81,24 @@ export default defineConfig({
                 text: '开发环境配置要求',
                 link: '/kun-visualnovel-docs/configuration/setup',
               },
+              {
+                text: '数据库（MongoDB）和缓存（Redis）的安装和配置',
+                link: '/kun-visualnovel-docs/configuration/db',
+              },
+            ],
+          },
+          {
+            text: 'Frontend',
+            collapsed: false,
+            items: [
+              {
+                text: 'Vite',
+                link: '/kun-visualnovel-docs/frontend/vite',
+              },
+              {
+                text: 'Vue 3',
+                link: '/kun-visualnovel-docs/frontend/vue3',
+              },
             ],
           },
         ],
