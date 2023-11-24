@@ -370,4 +370,147 @@ Vue3 带来了几个内置组件，在我们的项目中均有涉及，这里介
 
 尤其需要注意的是，请给 `<Component>` 加上 `:key`，以表示其唯一性，否则 `vue-router` 将会识别不到路由的变化，导致页面不更新
 
-### 
+### RouterLink
+
+```vue
+<template>
+    <RouterLink :to="{ path: kun.router }">
+      {{ $tm(`header.${kun.name}`) }}
+    </RouterLink>
+</template>
+```
+
+本项目中 `<RouterLink>` 用于路由的跳转，这个操作应该被称为动态路由匹配
+
+大白话就是根据页面的唯一路径来跳转到指定的页面
+
+项目中有两种用法，一是上面的用法，还有一种常见的用法是直接使用 `ES6` 模板字符串指定 `<RouterLink>` 的 `to` 参数，例如 `:to="/topic/${tid}"`
+
+上面提到了 `useRoute` 函数，和 `<RouterLink>` 相关的函数为 `useRouter`，这个函数会返回一个 `Router` 实例
+
+注意，不是 `Route` 实例，本项目中的 `Router` 实例一般用于 `router.push()`
+
+### Transition
+
+```vue
+<template>
+  <Transition name="order" mode="out-in">
+  </Transition>
+</template>
+
+<style lang="scss" scoped>
+.order-enter-active,
+.order-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.order-enter-from {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.order-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
+
+```
+
+`Transition` 组件是 Vue 内置的动画组件，用于对单个组件过渡
+
+上面的用例是本项目根据 vue [官方案例](https://vuejs.org/guide/built-ins/transition.html#transition-modes)改编的，遵循 Vue 官网最佳实践，样例位于 `src/views/ranking/components/TopicFrom.vue`
+
+本项目将 `<Transition>` 组件与 `animate.css` 一起使用，典型用法为
+
+```vue
+<template>
+    <Transition
+      enter-active-class="animate__animated animate__fadeInUp animate__faster"
+      leave-active-class="animate__animated animate__fadeOutDown animate__faster"
+    >
+    </Transition>
+</template>
+```
+
+### TransitionGroup
+
+`<TransitionGroup>` 是 Vue 较新的一个过滤动画组件，它的作用是将一组元素整体进行过渡
+
+本项目中的 `<TransitionGroup>` 均为 Vue3 官网 `<TransitionGroup>` 的示例改编而来
+
+```vue
+<template>
+  <TransitionGroup name="item" tag="div">
+    <div class="item" v-if="isShowPageWidth">
+      <PageWidth />
+    </div>
+
+    <div class="item" v-else-if="!isShowPageWidth">
+      <Font />
+    </div>
+  </TransitionGroup>
+</template>
+
+<style lang="scss" scoped>
+.item-move,
+.item-enter-active,
+.item-leave-active {
+  transition: all 0.5s ease;
+}
+
+.item-enter-from,
+.item-leave-to {
+  opacity: 0;
+  transform: translateY(77px);
+}
+
+.item-leave-active {
+  position: absolute;
+}
+</style>
+```
+
+### KeepAlive
+
+本项目中的 `<KeepAlive>` 组件仅用了一次，位于 `src/components/top-bar/KUNGalgameTopBar.vue`
+
+```vue
+<template>
+  <KeepAlive :exclude="['PageWidth', 'Font']">
+    <KUNGalgameSettingsPanel
+      v-if="showKUNGalgamePanel"
+      @close="showKUNGalgamePanel = false"
+    />
+  </KeepAlive>
+<template>
+```
+
+它的主要目的是缓存页面数据，~~其实这里的数据感觉缓存不缓存无所谓，但是我就想用一下~~
+
+完了。。。我现在突然想到用户主页用这个不是挺香的。。晚上回去改。。
+
+### Teleport
+
+这也是 Vue3 的新组建，本项目中用到的场景比较多
+
+```vue
+<template>
+  <Teleport to="body" :disabled="showAlert">
+    <Transition name="alert">
+      <div v-if="showAlert" class="mask">
+      </div>
+    </Transition>
+  </Teleport>
+</template>
+```
+
+例如上面的代码，通过 `disabled` 来决定是否显示面板，本项目中的项目都是这个原理
+
+参考的是 [Vue 官网的案例](https://vuejs.org/examples/#modal)
+
+`<Teleport>` 的组件存放于 `App.vue` 中，保证全局可用，还有一个 `Teleport` 组件是 `ReplyPanel`
+
+
+
+
