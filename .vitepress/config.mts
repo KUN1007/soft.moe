@@ -64,7 +64,7 @@ export default defineConfig({
                 link: '/kun-visualnovel-docs/overview/purpose',
               },
               {
-                text: '项目目的和背景',
+                text: '主要功能和模块概览',
                 link: '/kun-visualnovel-docs/overview/features',
               },
               {

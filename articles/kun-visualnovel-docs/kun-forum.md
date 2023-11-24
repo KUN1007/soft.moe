@@ -21,26 +21,26 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 项目概述
 
-* [项目目的和背景](/kun-visualnovel-docs/overview/purpose)
-* [技术栈介绍](/kun-visualnovel-docs/overview/tech-stack)
-* [主要功能和模块概览](/kun-visualnovel-docs/overview/features)
+* [项目目的和背景](overview/purpose)
+* [技术栈介绍](overview/tech-stack)
+* [主要功能和模块概览](overview/features)
 
 ### 开发环境配置指南（Node.js、Vite、Webpack等）
 
-* [开发环境配置要求](kun-visualnovel-docs/configuration/setup)
-* [数据库（MongoDB）和缓存（Redis）的安装和配置](kun-visualnovel-docs/configuration/db)
+* [开发环境配置要求](configuration/setup)
+* [数据库（MongoDB）和缓存（Redis）的安装和配置](configuration/db)
 
 ### 前端
 
-* [Vite](kun-visualnovel-docs/frontend/vite)
-* [Vue3](kun-visualnovel-docs/frontend)
-* [Pinia](kun-visualnovel-docs/frontend)
-* [Router](kun-visualnovel-docs/frontend)
-* [Fetch API](kun-visualnovel-docs/frontend)
-* [SCSS](kun-visualnovel-docs/frontend)
-* [i18n](kun-visualnovel-docs/frontend)
-* [localforage / indexdb](kun-visualnovel-docs/frontend)
-* [Milkdown](kun-visualnovel-docs/frontend)
+* [Vite](frontend/vite)
+* [Vue3](frontend/vue3)
+* [Pinia](frontend)
+* [Router](frontend)
+* [Fetch API](frontend)
+* [SCSS](frontend)
+* [i18n](frontend)
+* [localforage / indexdb](frontend)
+* [Milkdown](frontend)
 
 ### 后端
 
