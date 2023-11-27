@@ -108,26 +108,26 @@ export default defineConfig({
         collapsed: true,
         items: [
           {
-            text: 'Production',
-            collapsed: false,
-            items: [
-              {
-                text: '对于一次网站 UI 更新的认识',
-                link: '/technology/production/kun-ui.md',
-              },
-            ],
-          },
-          {
             text: 'Algorithm',
             collapsed: false,
             items: [
               {
                 text: '关于图的认识',
-                link: '/technology/algorithm/kun-graph.md',
+                link: '/technology/algorithm/kun-graph',
               },
               {
                 text: '二分图、欧拉图、哈密顿图',
-                link: '/technology/algorithm/kun-graph-2.md',
+                link: '/technology/algorithm/kun-graph-2',
+              },
+            ],
+          },
+          {
+            text: 'Backend',
+            collapsed: false,
+            items: [
+              {
+                text: 'SSO 与 OAuth 2.0',
+                link: '/technology/backend/kun-sso-oauth',
               },
             ],
           },
@@ -137,7 +137,21 @@ export default defineConfig({
             items: [
               {
                 text: 'Web 前端概览',
-                link: '/technology/frontend/kun-frontend.md',
+                link: '/technology/frontend/kun-frontend',
+              },
+              {
+                text: 'Nextjs',
+                link: '/technology/frontend/kun-nextjs',
+              },
+            ],
+          },
+          {
+            text: 'Production',
+            collapsed: false,
+            items: [
+              {
+                text: '对于一次网站 UI 更新的认识',
+                link: '/technology/production/kun-ui',
               },
             ],
           },
@@ -153,7 +167,7 @@ export default defineConfig({
             items: [
               {
                 text: '我的朋友们',
-                link: '/others/friends/kun-friend.md',
+                link: '/others/friends/kun-friend',
               },
             ],
           },
