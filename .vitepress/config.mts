@@ -51,6 +51,22 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: 'Animations',
+        collapsed: true,
+        items: [
+          {
+            text: 'Waifu',
+            collapsed: false,
+            items: [
+              {
+                text: '2023 智乃生日快乐！',
+                link: '/animations/waifu/kun-chino-2023',
+              },
+            ],
+          },
+        ],
+      },
+      {
         text: 'KUN Visual Novel Docs',
         collapsed: true,
         link: '/kun-visualnovel-docs/kun-forum',

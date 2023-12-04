@@ -10,6 +10,7 @@
     "cnpm",
     "commitlint",
     "commonmark",
+    "Darkpi",
     "docsearch",
     "emmm",
     "Floyed",
@@ -39,6 +40,7 @@
     "peaceiris",
     "persistedstate",
     "Pinia",
+    "pixiv",
     "Processon",
     "prosemirror",
     "Robo",
@@ -55,6 +57,7 @@
     "visualnovel",
     "visualnovels",
     "vitepress",
+    "Waifu",
     "webp",
     "yurzhang"
   ]
