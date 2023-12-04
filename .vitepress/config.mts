@@ -171,6 +171,16 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: 'Tools',
+            collapsed: false,
+            items: [
+              {
+                text: '更改 GitHub 邮箱后贡献消失',
+                link: '/technology/tools/kun-github-email',
+              },
+            ],
+          },
         ],
       },
       {
