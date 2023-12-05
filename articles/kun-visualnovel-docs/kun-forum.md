@@ -34,7 +34,7 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 * [Vite](frontend/vite)
 * [Vue3](frontend/vue3)
-* [Pinia](frontend)
+* [Pinia](frontend/pinia)
 * [Router](frontend)
 * [Fetch API](frontend)
 * [SCSS](frontend)
