@@ -13,8 +13,8 @@
   "devDependencies": {
     "busuanzi.pure.js": "^1.0.3",
     "sass": "^1.69.5",
-    "vitepress": "1.0.0-rc.20",
-    "vue": "^3.3.8"
+    "vitepress": "1.0.0-rc.31",
+    "vue": "^3.3.10"
   },
   "scripts": {
     "dev": "vitepress dev --host 127.0.0.1 --port 7777",

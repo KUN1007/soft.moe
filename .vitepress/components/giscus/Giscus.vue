@@ -3,15 +3,8 @@ import Giscus from '@giscus/vue'
 import { useData } from 'vitepress'
 
 const getStyles = () => {
-  const lightUrl = new URL(
-    '../../theme/giscus/giscus-light.css',
-    // @ts-ignore
-    import.meta.url
-  ).href
-  // @ts-ignore
-  const darkUrl = new URL('../../theme/giscus/giscus-dark.css', import.meta.url)
-    .href
-  // @ts-ignore
+  const lightUrl = 'https://soft.moe/giscus/giscus-light.css'
+  const darkUrl = 'https://soft.moe/giscus/giscus-dark.css'
   return useData().isDark.value ? darkUrl : lightUrl
 }
 </script>
