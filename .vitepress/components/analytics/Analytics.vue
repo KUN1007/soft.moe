@@ -27,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   font-style: oblique;
-  margin-bottom: 33px;
+  margin: 33px 0;
 
   & > div {
     display: flex;

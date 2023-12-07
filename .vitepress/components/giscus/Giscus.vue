@@ -1,5 +1,19 @@
 <script setup lang="ts">
 import Giscus from '@giscus/vue'
+import { useData } from 'vitepress'
+
+const getStyles = () => {
+  const lightUrl = new URL(
+    '../../theme/giscus/giscus-light.css',
+    // @ts-ignore
+    import.meta.url
+  ).href
+  // @ts-ignore
+  const darkUrl = new URL('../../theme/giscus/giscus-dark.css', import.meta.url)
+    .href
+  // @ts-ignore
+  return useData().isDark.value ? darkUrl : lightUrl
+}
 </script>
 
 <template>
@@ -15,8 +29,9 @@ import Giscus from '@giscus/vue'
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      :theme="`../../theme/giscus/giscus.css`"
+      :theme="getStyles()"
       lang="en"
+      loading="lazy"
     />
   </div>
 </template>
@@ -25,5 +40,10 @@ import Giscus from '@giscus/vue'
 .comments-container {
   max-height: 640px;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
 }
 </style>
