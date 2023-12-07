@@ -20,5 +20,8 @@
     "dev": "vitepress dev --host 127.0.0.1 --port 7777",
     "build": "vitepress build",
     "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@giscus/vue": "^2.3.0"
   }
 }
