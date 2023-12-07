@@ -64,6 +64,38 @@ export const sidebarConfig = [
             text: 'Vue 3',
             link: '/kun-visualnovel-docs/frontend/vue3',
           },
+          {
+            text: 'Pinia',
+            link: '/kun-visualnovel-docs/frontend/pinia',
+          },
+          {
+            text: 'Vue 3',
+            link: '/kun-visualnovel-docs/frontend/vue3',
+          },
+          {
+            text: 'Router',
+            link: '/kun-visualnovel-docs/frontend/router',
+          },
+          {
+            text: 'Fetch API',
+            link: '/kun-visualnovel-docs/frontend/fetch',
+          },
+          {
+            text: 'SCSS',
+            link: '/kun-visualnovel-docs/frontend/scss',
+          },
+          {
+            text: 'i18n',
+            link: '/kun-visualnovel-docs/frontend/i18n',
+          },
+          {
+            text: 'localforage / Indexdb',
+            link: '/kun-visualnovel-docs/frontend/indexdb',
+          },
+          {
+            text: 'Milkdown',
+            link: '/kun-visualnovel-docs/frontend/Milkdown',
+          },
         ],
       },
     ],

@@ -1,12 +1,5 @@
 <script setup lang="ts">
 import Giscus from '@giscus/vue'
-import { useData } from 'vitepress'
-
-const getStyles = () => {
-  const lightUrl = 'https://soft.moe/giscus/giscus-light.css'
-  const darkUrl = 'https://soft.moe/giscus/giscus-dark.css'
-  return useData().isDark.value ? darkUrl : lightUrl
-}
 </script>
 
 <template>
@@ -22,7 +15,7 @@ const getStyles = () => {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      :theme="getStyles()"
+      theme="https://soft.moe/giscus/giscus.css"
       lang="en"
       loading="lazy"
     />
