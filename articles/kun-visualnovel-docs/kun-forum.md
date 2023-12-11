@@ -44,11 +44,12 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 后端
 
-* Koa的基本使用和中间件配置
-* 数据库（MongoDB）的模型设计和操作方法
-* 缓存（Redis）的使用方法
-* 身份验证和授权
-* API路由设计和实现
+* [Koa](/backend/koa)
+* [MVC](/backend)
+* [Router](/backend)
+* [MongoDB](/backend)
+* [Redis](/backend)
+* [JWT](/backend)
 
 ### 部署
 
