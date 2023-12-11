@@ -38,7 +38,7 @@ The view defines how the app's data should be displayed.
 
 项目中我们将数据的控制逻辑放在了后端，它位于后端项目的 `src/controller` 和 `src/service` 目录下
 
-为什么我们将 `Controller` 分为了 `Controller` 和 `Service`，这是由于将请求解析验证，以及数据库操作写在一起，逻辑过多，代码看起来不方便。因为我们将这些逻辑拆为了两个部分，为了后续的查看和更改代码，为了更清晰的逻辑
+为什么我们将 `Controller` 分为了 `Controller` 和 `Service`，这是由于将请求解析验证，以及数据库操作写在一起，逻辑过多，代码看起来不方便。因此我们将这些逻辑拆为了两个部分，为了后续的查看和更改代码，为了更清晰的逻辑
 
 接着看 MDN 的解释
 
