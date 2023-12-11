@@ -44,12 +44,12 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 后端
 
-* [Koa](/backend/koa)
-* [MVC](/backend)
-* [Router](/backend)
-* [MongoDB](/backend)
-* [Redis](/backend)
-* [JWT](/backend)
+* [Koa](backend/koa)
+* [MVC](backend/mvc)
+* [Router](backend)
+* [MongoDB](backend)
+* [Redis](backend)
+* [JWT](backend)
 
 ### 部署
 
