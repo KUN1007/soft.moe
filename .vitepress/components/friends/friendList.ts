@@ -25,4 +25,9 @@ export const friendList: FriendList[] = [
     name: 'yurzhang',
     link: 'https://yurzhang.com/',
   },
+  {
+    avatar: '/avatar/云楼汐.webp',
+    name: '云楼汐',
+    link: 'https://parsifa1.github.io/',
+  },
 ]
