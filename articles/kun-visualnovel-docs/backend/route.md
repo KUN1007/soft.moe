@@ -21,5 +21,38 @@
 
 ## REST API
 
-REST API 是一种 API
+[REST API](https://www.ibm.com/topics/rest-apis#:~:text=A%20REST%20API%20is%20an,sometimes%20referred%20to%20RESTful%20APIs.) 是一种 API 设计标准，在本项目中，它有如下体现
+
+* API 请求路径中不含有动词
+* 请求同一路径时根据请求方法的不同而进行不同的操作
+* 直观定义该资源属于哪个路径
+
+需要注意的是，上面的说法是为了方便理解而解释的，定义还是看[更加专业的定义](https://restfulapi.net/)
+
+### 举例
+
+请看到 `src/routes/modules/topicRouter.ts`
+
+```typescript
+import Router from 'koa-router'
+import TopicController from '@/controller/topicController'
+
+const router = new Router()
+
+router.prefix('/api/topics')
+
+router.post('/', TopicController.createTopic)
+
+router.get('/:tid', TopicController.getTopicByTid)
+
+router.put('/:tid', TopicController.updateTopic)
+
+router.put('/:tid/upvote', TopicController.updateTopicUpvote)
+```
+
+可以看到我们使用 `tid` 这个唯一 ID 标识了资源的唯一路径
+
+我们的 getTopicByPid 和 updateTopic 都指向了 `/api/topic/:tid` 这个路径，但是通过请求方式的不同我们合理的区分了 API
+
+注意到 `router.prefix()`，我们将路由的开头都加上了特定的前缀，并且以 `/api` 开头
 
