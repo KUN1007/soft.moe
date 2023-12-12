@@ -44,19 +44,20 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 后端
 
-* Koa的基本使用和中间件配置
-* 数据库（MongoDB）的模型设计和操作方法
-* 缓存（Redis）的使用方法
-* 身份验证和授权
-* API路由设计和实现
+* [Koa](backend/koa)
+* [MVC](backend/mvc)
+* [Route](backend/route)
+* [MongoDB / Mongoose](backend/mongodb)
+* [Redis](backend/redis)
+* [JWT](backend/jwt)
 
 ### 部署
 
-* 生产环境的配置指南
-* 构建前端和后端的指令或脚本
-* 数据库和缓存的部署和配置
-* 安全性考虑和最佳实践
-* 维护与扩展
+* [生产环境的配置指南](deploy/deploy-config)
+* [构建前端和后端的指令或脚本](deploy/script)
+* [数据库和缓存的部署和配置](deploy/db)
+* [安全性考虑和最佳实践](deploy/security)
+* [维护与扩展](deploy/maintenance)
 
 ### 代码结构和架构说明
 
