@@ -47,7 +47,7 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 * [Koa](backend/koa)
 * [MVC](backend/mvc)
 * [Route](backend/route)
-* [MongoDB](backend)
+* [MongoDB / Mongoose](backend/mongodb)
 * [Redis](backend)
 * [JWT](backend)
 
