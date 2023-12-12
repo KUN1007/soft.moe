@@ -55,7 +55,7 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 * [生产环境的配置指南](deploy/deploy-config)
 * [构建前端和后端的指令或脚本](deploy/script)
-* [数据库和缓存的部署和配置](deploy/)
+* [数据库和缓存的部署和配置](deploy/db)
 * [安全性考虑和最佳实践](deploy/)
 * [维护与扩展](deploy/)
 
