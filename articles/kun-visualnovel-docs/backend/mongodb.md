@@ -18,7 +18,7 @@
 
 ### Mongoose
 
-本项目中我们使用了 `Mongoose` 来操作 `Mongodb`，官网(v8.0.3)的描述是
+本项目中我们使用了 `Mongoose` 来在 Nodejs 环境下操作 `Mongodb`，官网(v8.0.3)的描述是
 
 > elegant mongodb object modeling for node.js
 
