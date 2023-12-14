@@ -67,10 +67,9 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 常见问题和解决方案
 
-* [常见问题](issue/)
-* [解决方案列表](issue/)
+* [常见问题](issue/issue)
 
 ### 更新日志
 
-* 记录每个版本的更新内容和改动
+* [记录每个版本的更新内容和改动](update/log)
 
