@@ -61,9 +61,10 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 代码结构和架构说明
 
-* 前后端交互接口文档
-* 日志和错误处理
-* 测试策略和工具
+* [前后端交互接口文档](structure/api)
+* [数据库字段含义说明](structure/db)
+* [日志和错误处理](structure/)
+* [测试策略和工具](structure/)
 
 ### 常见问题和解决方案
 
