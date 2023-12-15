@@ -81,7 +81,7 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 规划
 
-* [确定目标](dedign/aim)
+* [确定目标](design/aim)
 * [分析情况](design/analyze)
 * [构思阶段](design/inspire)
 * [设计阶段](design/design)
