@@ -1,4 +1,6 @@
-export const sidebarConfig = [
+import type { DefaultTheme } from 'vitepress'
+
+export const sidebarConfig: DefaultTheme.Sidebar = [
   {
     text: 'Animations',
     collapsed: true,
@@ -69,10 +71,6 @@ export const sidebarConfig = [
             link: '/kun-visualnovel-docs/frontend/pinia',
           },
           {
-            text: 'Vue 3',
-            link: '/kun-visualnovel-docs/frontend/vue3',
-          },
-          {
             text: 'Router',
             link: '/kun-visualnovel-docs/frontend/router',
           },
@@ -95,6 +93,100 @@ export const sidebarConfig = [
           {
             text: 'Milkdown',
             link: '/kun-visualnovel-docs/frontend/Milkdown',
+          },
+        ],
+      },
+      {
+        text: 'Backend',
+        collapsed: false,
+        items: [
+          {
+            text: 'Koa',
+            link: '/kun-visualnovel-docs/backend/koa',
+          },
+          {
+            text: 'MVC',
+            link: '/kun-visualnovel-docs/backend/mvc',
+          },
+          {
+            text: 'Route',
+            link: '/kun-visualnovel-docs/backend/route',
+          },
+          {
+            text: 'Mongodb / Mongoose',
+            link: '/kun-visualnovel-docs/backend/mongodb',
+          },
+          {
+            text: 'Redis',
+            link: '/kun-visualnovel-docs/backend/redis',
+          },
+          {
+            text: 'JWT',
+            link: '/kun-visualnovel-docs/backend/jwt',
+          },
+        ],
+      },
+      {
+        text: 'Deploy',
+        collapsed: false,
+        items: [
+          {
+            text: '生产环境的配置指南',
+            link: '/kun-visualnovel-docs/deploy/deploy-config',
+          },
+          {
+            text: '构建前端和后端的指令或脚本',
+            link: '/kun-visualnovel-docs/deploy/script',
+          },
+          {
+            text: '数据库和缓存的部署和配置',
+            link: '/kun-visualnovel-docs/deploy/db',
+          },
+          {
+            text: '安全性考虑和最佳实践',
+            link: '/kun-visualnovel-docs/deploy/security',
+          },
+          {
+            text: '维护与扩展',
+            link: '/kun-visualnovel-docs/deploy/maintenance',
+          },
+        ],
+      },
+      {
+        text: 'Structure',
+        collapsed: false,
+        items: [
+          {
+            text: '前后端交互接口文档',
+            link: '/kun-visualnovel-docs/structure/api',
+          },
+          {
+            text: '数据库字段含义说明',
+            link: '/kun-visualnovel-docs/structure/db',
+          },
+          {
+            text: '错误处理',
+            link: '/kun-visualnovel-docs/structure/error',
+          },
+        ],
+      },
+      {
+        text: 'Issue',
+        collapsed: false,
+        items: [
+          {
+            text: '常见问题',
+            link: '/kun-visualnovel-docs/issue/issue',
+          },
+        ],
+      },
+      {
+        text: 'Update Log',
+        collapsed: false,
+        items: [
+          {
+            text: '记录每个版本的更新内容和改动',
+            link: '/kun-visualnovel-docs/update/log',
           },
         ],
       },
