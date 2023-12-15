@@ -190,6 +190,38 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
           },
         ],
       },
+      {
+        text: `Others`,
+        collapsed: false,
+        items: [
+          {
+            text: '确定目标',
+            link: '/kun-visualnovel-docs/others/aim',
+          },
+          {
+            text: '分析、构思、设计',
+            link: '/kun-visualnovel-docs/others/analyze',
+          },
+          {
+            text: '拟定方案',
+            link: '/kun-visualnovel-docs/others/all',
+          },
+          {
+            text: '网站维护',
+            link: '/kun-visualnovel-docs/others/maintenance',
+          },
+        ],
+      },
+      {
+        text: 'Future',
+        collapsed: false,
+        items: [
+          {
+            text: '鲲 Galgame 论坛未来的计划是什么',
+            link: '/kun-visualnovel-docs/future/plan',
+          },
+        ],
+      },
     ],
   },
   {
