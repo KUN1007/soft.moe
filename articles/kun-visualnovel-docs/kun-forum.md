@@ -73,6 +73,39 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 * [记录每个版本的更新内容和改动](update/log)
 
+## 非技术文档
+
+上面的开发文档全部是技术相关，如果有朋友没有一定 Web 开发基础的话可能看不懂
+
+因此，下面我们将从一般人，或者**产品经理**的角度出发，说一下这个论坛是被如何开发出来的
+
+### 规划
+
+* [确定目标](dedign/aim)
+* [分析情况](design/analyze)
+* [构思阶段](design/inspire)
+* [设计阶段](design/design)
+
+### 决策
+
+* [拟定方案](strategy/all)
+* [备选方案](strategy/alternative)
+* [评估方案](strategy/estimate)
+* [决策](strategy/decision)
+
+### 实现
+
+* [代码编写](implement/)
+* [上线](implement/)
+
+### 维护
+
+* [网站维护](maintenance/)
+
+### 反馈
+
+* [Don't Make Me Think]()
+
 ## 其它
 
 截止到 12 / 14 / 2023，终于把目录上的各个方面全部写完了，但是还有很多没有写出来的，如果有任何的不懂，或者有想法，请联系我们
