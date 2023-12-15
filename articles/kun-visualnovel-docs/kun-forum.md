@@ -1,4 +1,4 @@
-# The CUTEST Visual Novel Forum's Document.
+# KUN Visual Novel Documentation
 
 [KUN Visual Novel Forum](https://kungal.com), [鲲 Galgame 论坛](https://kungal.com) - 开发文档
 
@@ -88,3 +88,13 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 代码编写的角度技术文档说的很明白了，里面踩了无数的坑，代码经验是真真正正从零到一打拼出来的，看完会有收获的
 
 截止到 12 / 14 / 2023，终于把目录上的各个方面全部写完了，但是还有很多没有写出来的，如果有任何的不懂，或者有想法，请联系我们
+
+## 发点牢骚？
+
+不存在的。
+
+难受的设计开发维护工作就交给我们吧，其他不好的东东也交给我们。
+
+希望建好这个论坛之后，可以有人去用，分享自己的萌萌（美好），这就是对我们的最大支持了！
+
+谢谢！
