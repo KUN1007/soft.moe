@@ -97,12 +97,12 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 ### 重构概述
 
-* 为什么要重构
+* [为什么要重构](refactoring/refactoring)
 
 ### 重构过程
 
-* 新建 Nuxt3 项目并集成依赖
-* 迁移 Vue3 项目
+* [新建 Nuxt3 项目并集成依赖](refactoring/setup)
+* [迁移 Vue3 项目](refactoring)
 
 ### 性能展示
 
