@@ -122,3 +122,17 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 希望建好这个论坛之后，可以有人去用，分享自己的萌萌（美好），这就是对我们的最大支持了！
 
 谢谢！
+
+## 加入我们
+
+### 开发群组，Web 开发交流，以及参与论坛各方面的技术
+
+Telegram: https://t.me/KUNForum
+
+Tencent QQ: 872839714
+
+### 交流群组，Galgame 相关讨论，萌萌聊天
+
+Telegram: https://t.me/kungalgame
+
+Tencent QQ: 714254203
