@@ -250,6 +250,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             text: 'SSO 与 OAuth 2.0',
             link: '/technology/backend/kun-sso-oauth',
           },
+          {
+            text: '记录一次 mongodb 操作失误导致字段重复的处理过程',
+            link: '/technology/backend/kun-mongodb-field-error',
+          },
         ],
       },
       {
