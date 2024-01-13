@@ -306,6 +306,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
           },
         ],
       },
+      {
+        text: 'College',
+        collapsed: false,
+        items: [
+          {
+            text: '大学生逃课指南',
+            link: '/others/college/how-to-play-truant',
+          },
+        ],
+      },
     ],
   },
   {
