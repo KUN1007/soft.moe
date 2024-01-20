@@ -261,6 +261,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         collapsed: false,
         items: [
           {
+            text: 'Svelte',
+            collapsed: false,
+            items: [
+              {
+                text: 'Svelte 教程 Part1 & Part2',
+                link: '/technology/frontend/svelte/kun-svelte',
+              },
+            ],
+          },
+          {
             text: 'Web 前端概览',
             link: '/technology/frontend/kun-frontend',
           },
