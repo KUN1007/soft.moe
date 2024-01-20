@@ -268,6 +268,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
                 text: 'Svelte 教程 Part1 & Part2',
                 link: '/technology/frontend/svelte/kun-svelte',
               },
+              {
+                text: 'SvelteKit 教程 Part3 & Part4',
+                link: '/technology/frontend/svelte/kun-svelte-kit',
+              },
             ],
           },
           {
