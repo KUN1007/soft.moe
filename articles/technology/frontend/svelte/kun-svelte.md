@@ -781,7 +781,7 @@ function createCount() {
 
 
 
-## Part2: Advanced Avelte
+## Part2: Advanced Svelte
 
 这部分看起来全部在介绍 Svelte 的各种库
 
@@ -908,7 +908,7 @@ Box.svelte
 
 ### Component Composition
 
-插槽，用法是 `<solt/>`，和 Vue 一模一样
+插槽，用法是 `<slot/>`，和 Vue 一模一样
 
 具名插槽。。。一模一样
 

@@ -8,6 +8,7 @@
     "Axure",
     "bangumi",
     "Batis",
+    "behaviour",
     "Bilibili",
     "bishoujo",
     "brackethighlighter",
@@ -31,6 +32,7 @@
     "indexdb",
     "INTLIFY",
     "Jetbrains",
+    "kəʊˈɜːs",
     "kungal",
     "kungalgame",
     "localforage",
@@ -50,6 +52,7 @@
     "nfqjztvpwcpyaamwjs",
     "Nikaidou",
     "nojekyll",
+    "nonpassive",
     "nprogess",
     "Nuxt",
     "Offical",
@@ -58,6 +61,8 @@
     "persistedstate",
     "Pinia",
     "pixiv",
+    "pointermove",
+    "prerender",
     "prettylights",
     "Processon",
     "prosemirror",
@@ -82,6 +87,7 @@
     "VNDB",
     "Waifu",
     "webp",
-    "yurzhang"
+    "yurzhang",
+    "yuyu"
   ]
 }
