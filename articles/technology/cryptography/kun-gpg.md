@@ -159,6 +159,8 @@ k7vpqxyxkieawEDktYOJq0WClV4BRw==
 git config --global commit.gpgsign true
 ```
 
+### Windows with vscode
+
 我现在使用的是 `vscode`，要提交的话需要在设置里开一下允许提交签名这个选项，默认这个选项不开启
 
 ![](https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202401221243223.png)
@@ -182,3 +184,21 @@ fatal: failed to write commit object
 ```
 
 好，让我看看这个提交有没有生效
+
+### 结果
+
+现在已经成功生效了，可以看到这是自己签名过的提交了
+
+![](https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202401221254528.png)
+
+## Archlinux Git 签名提交
+
+我们现在把我们刚才在 Windows 生成的 `S`, `E`, `A` 密钥导入到 linux 系统自带的 gpg 中试试
+
+如果按照最初的文章来的话，现在手上应该有三个文件
+
+* revocation_cert (吊销证书)
+* secret_key (RSA 公钥的私钥)
+* secret_subkeys (子密钥的私钥)
+
+现在我们关掉 Windows 的 vscode，将这几个文件导入 Archlinux 试试
