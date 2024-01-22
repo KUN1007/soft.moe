@@ -234,3 +234,146 @@ gpg: Good signature from "KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.co
 私钥本身并不被吊销，但由于公钥已经不再被信任，因此与之关联的私钥也就失去了其用途。
 
 现在我们关掉 Windows 的 vscode，将这几个文件导入 Archlinux 试试
+
+### 导出公钥
+
+在 Windows 上执行
+
+```
+~ gpg -armor --export > .\public_keys.asc
+```
+
+这会导出全部的公钥，包含子密钥的公钥
+
+### 安全传输密钥
+
+将所有的公钥，私钥文件安全的转移到 Archlinux 上
+
+### 在 Archlinux 上导入公钥
+
+```zsh
+❯ gpg --import public_keys.asc
+
+gpg: directory '/home/kun/.gnupg' created
+gpg: /home/kun/.gnupg/trustdb.gpg: trustdb created
+gpg: key 70A05553D73D8AFB: public key "KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+```
+
+### 在 Archlinux 上导入私钥
+
+导入公钥的私钥
+
+```zsh
+❯ gpg --import secret_key.asc
+
+gpg: key 70A05553D73D8AFB: "KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>" not changed
+gpg: key 70A05553D73D8AFB: secret key imported
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+```
+
+导入子密钥的私钥
+
+```zsh
+❯ gpg --import secret_subkeys.asc 
+
+gpg: key 70A05553D73D8AFB: "KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>" not changed
+gpg: To migrate 'secring.gpg', with each smartcard, run: gpg --card-status
+gpg: key 70A05553D73D8AFB: secret key imported
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+```
+
+过程中会要求输入密码，粘贴一下就行
+
+### 修改密钥信任级别
+
+倘若这时候查看密钥，会发现
+
+```zsh
+❯ gpg --keyid-format LONG --list-keys
+
+[keyboxd]
+---------
+pub   rsa4096/70A05553D73D8AFB 2024-01-22 [C]
+      D28034F34AE747A6FE75C0F570A05553D73D8AFB
+uid                 [unknown] KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>
+sub   ed25519/1845322DB3B9DDB2 2024-01-22 [S] [expires: 2027-01-21]
+sub   cv25519/71F28CE7A795B7AF 2024-01-22 [E] [expires: 2027-01-21]
+sub   ed25519/DFE9D95DFEFF728A 2024-01-22 [A] [expires: 2027-01-21]
+
+```
+
+这里有一个 `unknown`，这个代表这个 GPG key 的信任级别，感兴趣可以了解一下
+
+刚才在 Windows 上这个信任级别是 `ultimate`，完全信任，这个 unknown 感觉。。。有点不太靠谱
+
+虽然我知道它是有效的，但是我还是打算改一下好看
+
+```zsh
+❯ gpg --edit-key D28034F34AE747A6FE75C0F570A05553D73D8AFB
+gpg (GnuPG) 2.4.3; Copyright (C) 2023 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Secret key is available.
+
+sec  rsa4096/70A05553D73D8AFB
+     created: 2024-01-22  expires: never       usage: C   
+     trust: unknown       validity: unknown
+ssb  ed25519/1845322DB3B9DDB2
+     created: 2024-01-22  expires: 2027-01-21  usage: S   
+ssb  cv25519/71F28CE7A795B7AF
+     created: 2024-01-22  expires: 2027-01-21  usage: E   
+ssb  ed25519/DFE9D95DFEFF728A
+     created: 2024-01-22  expires: 2027-01-21  usage: A   
+[ unknown] (1). KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>
+
+gpg> trust
+sec  rsa4096/70A05553D73D8AFB
+     created: 2024-01-22  expires: never       usage: C   
+     trust: unknown       validity: unknown
+ssb  ed25519/1845322DB3B9DDB2
+     created: 2024-01-22  expires: 2027-01-21  usage: S   
+ssb  cv25519/71F28CE7A795B7AF
+     created: 2024-01-22  expires: 2027-01-21  usage: E   
+ssb  ed25519/DFE9D95DFEFF728A
+     created: 2024-01-22  expires: 2027-01-21  usage: A   
+[ unknown] (1). KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+```
+
+现在再来输出一下，已经是 `ultimate` 了，舒服了（呜呜呜呜呜呜）
+
+### 配置 Git 认证提交
+
+和刚才一样
+
+```zsh
+❯ git config --global user.signingkey <key-ID>
+❯ git config --global commit.gpgsign true
+```
+
+### 配置 vscode git 认证提交
+
+### 结果
+
+好，我现在提交一下看看成功没有
