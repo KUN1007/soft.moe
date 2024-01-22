@@ -257,6 +257,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         ],
       },
       {
+        text: 'Cryptography',
+        collapsed: false,
+        items: [
+          {
+            text: 'GPG key 实现 GitHub `Verified` 认证（Authenticate & Sign）',
+            link: '/technology/cryptography/kun-gpg',
+          },
+        ],
+      },
+      {
         text: 'Frontend',
         collapsed: false,
         items: [
