@@ -377,3 +377,65 @@ Do you really want to set this key to ultimate trust? (y/N) y
 ### 结果
 
 好，我现在提交一下看看成功没有
+
+```zsh
+❯ git commit --amend -m docs
+```
+
+啊哈哈哈，我就知道没这么简单
+
+:::info
+error: gpg failed to sign the data:
+[GNUPG:] KEY_CONSIDERED D28034F34AE747A6FE75C0F570A05553D73D8AFB 0
+[GNUPG:] BEGIN_SIGNING H10
+[GNUPG:] PINENTRY_LAUNCHED 7705 curses 1.2.1 - xterm-256color :0 - 1000/1000 0
+gpg: signing failed: Inappropriate ioctl for device
+[GNUPG:] FAILURE sign 83918950
+gpg: signing failed: Inappropriate ioctl for device
+
+fatal: failed to write commit object
+:::
+
+原因是找不到输密码的 IO 窗口，下载一个就好了吧
+
+```zsh
+❯ sudo pacman -S pinentry
+❯ touch ~/.gnupg/gpg-agent.conf
+❯ echo "pinentry-program /usr/bin/pinentry-tty" >> ~/.gnupg/gpg-agent.conf
+```
+
+那个 `~/.gnupg` 文件下还有一个 common.conf,不是那个配置，要新建一个写配置
+
+写完之后重启一下 GPG
+
+```zsh
+❯ gpgconf --kill gpg-agent
+❯ gpg-agent
+❯ ps aux | grep gpg-agent
+```
+
+这里不能用 `gpgconf --daemon` 重启，直接 `gpgconf` 即可，然后 ps 看一下是不是在运行
+
+然后设置一下给 git 设置一下 gpg program，和 Windows 一样
+
+```zsh
+❯ git config --global gpg.program gpg
+```
+
+emmm，现在再试试
+
+好吧又报了个错
+
+:::info
+error: gpg failed to sign the data:
+[GNUPG:] KEY_CONSIDERED D28034F34AE747A6FE75C0F570A05553D73D8AFB 0
+[GNUPG:] BEGIN_SIGNING H10
+[GNUPG:] PINENTRY_LAUNCHED 3389 tty 1.2.1 - xterm-256color :0 - 1000/1000 0
+gpg: signing failed: Operation cancelled
+[GNUPG:] FAILURE sign 83886179
+gpg: signing failed: Operation cancelled
+
+fatal: failed to write commit object
+:::
+
+似乎是刚才的 `pinentry-program` 选错了，不应该是 tty，应该选 qt，改一下试试
