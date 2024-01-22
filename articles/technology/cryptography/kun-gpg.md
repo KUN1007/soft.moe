@@ -191,6 +191,30 @@ fatal: failed to write commit object
 
 ![](https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202401221254528.png)
 
+我们可以用这个命令看看我们的提交是否认证了
+
+```bash
+~ git log --show-signature
+```
+
+预期的结果应该是
+
+```log
+commit 0b9ac6925115c70d964a1ef416b0dca411b31777 (HEAD -> main, origin/main, origin/HEAD)
+gpg: Signature made 22/01/2024 1:02:13 pm China Standard Time^M
+gpg:                using EDDSA key F2E83D74DE0F55A5006F0F561845322DB3B9DDB2^M
+gpg: Good signature from "KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>" [ultimate]^M
+Author: KUN1007 <yuyuyukunkunkun@gmail.com>
+Date:   Mon Jan 22 13:02:08 2024 +0800
+
+    docs
+
+commit 2ba7dccf3ecbc7fef2777a672278f07a4244a201
+gpg: Signature made 22/01/2024 1:00:48 pm China Standard Time^M
+gpg:                using EDDSA key F2E83D74DE0F55A5006F0F561845322DB3B9DDB2^M
+gpg: Good signature from "KUN1007 (KUN IS THE CUTEST!) <yuyuyukunkunkun@gmail.com>" [ultimate]
+```
+
 ## Archlinux Git 签名提交
 
 我们现在把我们刚才在 Windows 生成的 `S`, `E`, `A` 密钥导入到 linux 系统自带的 gpg 中试试
