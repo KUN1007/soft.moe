@@ -159,4 +159,26 @@ k7vpqxyxkieawEDktYOJq0WClV4BRw==
 git config --global commit.gpgsign true
 ```
 
+我现在使用的是 `vscode`，要提交的话需要在设置里开一下允许提交签名这个选项，默认这个选项不开启
+
+![](https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202401221243223.png)
+
+这里设置一下 `"git.enableCommitSigning": true`
+
+又报了个小错误，因为我现在用的是 Windows
+
+```log
+> git -c user.useConfigOnly=true commit --quiet -S
+gpg: skipped "1845322DB3B9DDB2": No secret key
+gpg: signing failed: No secret key
+error: gpg failed to sign the data
+fatal: failed to write commit object
+```
+
+指定一下 GnuPG 程序的路径就可以，Windows Only
+
+```bash
+~ git config --global gpg.program "G:\GnuPG\bin\gpg.exe"
+```
+
 好，让我看看这个提交有没有生效
