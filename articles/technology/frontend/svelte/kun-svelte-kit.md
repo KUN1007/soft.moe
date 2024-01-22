@@ -252,7 +252,7 @@ You can customize the fallback error page. Create a `src/error.html` file:
 
 src/error.html
 
-```markup
+```svelte
 <h1>Game over</h1>
 <p>Code %sveltekit.status%</p>
 <p>%sveltekit.error.message%</p>

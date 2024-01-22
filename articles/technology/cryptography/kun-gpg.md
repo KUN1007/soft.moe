@@ -169,7 +169,7 @@ git config --global commit.gpgsign true
 
 又报了个小错误，因为我现在用的是 Windows
 
-```log
+```shell
 > git -c user.useConfigOnly=true commit --quiet -S
 gpg: skipped "1845322DB3B9DDB2": No secret key
 gpg: signing failed: No secret key
@@ -199,7 +199,7 @@ fatal: failed to write commit object
 
 预期的结果应该是
 
-```log
+```shell
 commit 0b9ac6925115c70d964a1ef416b0dca411b31777 (HEAD -> main, origin/main, origin/HEAD)
 gpg: Signature made 22/01/2024 1:02:13 pm China Standard Time^M
 gpg:                using EDDSA key F2E83D74DE0F55A5006F0F561845322DB3B9DDB2^M
@@ -291,6 +291,8 @@ gpg:   secret keys imported: 1
 ```
 
 过程中会要求输入密码，粘贴一下就行
+
+![](https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202401221420160.png)
 
 ### 修改密钥信任级别
 
@@ -438,4 +440,8 @@ gpg: signing failed: Operation cancelled
 fatal: failed to write commit object
 :::
 
-似乎是刚才的 `pinentry-program` 选错了，不应该是 tty，应该选 qt，改一下试试
+似乎是刚才的 `pinentry-program` 选错了，不应该是 tty，应该选 qt，改一下试试，因为我用的是 Archlinux with KDE
+
+啊哈哈哈哈，终于弹出来了，成功了！！
+
+![](https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202401221421923.png)
