@@ -11,7 +11,6 @@
     "url": "https://github.com/KUN1007/KUN1007.github.io.git"
   },
   "devDependencies": {
-    "busuanzi.pure.js": "^1.0.3",
     "sass": "^1.69.5",
     "vitepress": "1.0.0-rc.31",
     "vue": "^3.3.11"
