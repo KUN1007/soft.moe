@@ -11,9 +11,9 @@
     "url": "https://github.com/KUN1007/KUN1007.github.io.git"
   },
   "devDependencies": {
-    "sass": "^1.69.5",
-    "vitepress": "1.0.0-rc.31",
-    "vue": "^3.3.11"
+    "sass": "^1.70.0",
+    "vitepress": "1.0.0-rc.40",
+    "vue": "^3.4.15"
   },
   "scripts": {
     "dev": "vitepress dev --host 127.0.0.1 --port 7777",
@@ -21,6 +21,6 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "@giscus/vue": "^2.3.0"
+    "@giscus/vue": "^2.4.0"
   }
 }

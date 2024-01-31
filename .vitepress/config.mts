@@ -1,7 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { sidebarConfig } from './config/sidebar'
 import { socialLinksConfig } from './config/socialLinks'
-import { GA } from './plugins/googleAnalytics.ts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -11,7 +10,22 @@ export default defineConfig({
   srcDir: 'articles',
   outDir: './dist',
   // sitemap: { hostname: 'https://soft.moe' },
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }], GA],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    // Google Analytics
+    [
+      'script',
+      {
+        async: 'true',
+        src: `https://www.googletagmanager.com/gtag/js?id=${process.env.KUN_GOOGLE_ANALYTICS_ID}`,
+      },
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${process.env.KUN_GOOGLE_ANALYTICS_ID}');`,
+    ],
+  ],
   ignoreDeadLinks: true,
   lastUpdated: true,
   themeConfig: {
