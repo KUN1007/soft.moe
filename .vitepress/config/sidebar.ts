@@ -254,6 +254,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             text: '记录一次 mongodb 操作失误导致字段重复的处理过程',
             link: '/technology/backend/kun-mongodb-field-error',
           },
+          {
+            text: 'tRPC',
+            link: '/technology/backend/kun-trpc',
+          },
         ],
       },
       {
@@ -285,6 +289,26 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             ],
           },
           {
+            text: 'Nuxt3',
+            collapsed: false,
+            items: [
+              {
+                text: '如何将一个现有的 Vue3 项目改写为 Nuxt3 项目',
+                link: '/technology/frontend/nuxt3/kun-nuxt3',
+              },
+            ],
+          },
+          {
+            text: 'Vue3',
+            collapsed: false,
+            items: [
+              {
+                text: '如何在 setup() 外使用 Pinia',
+                link: '/technology/frontend/vue/kun-pinia',
+              },
+            ],
+          },
+          {
             text: 'Web 前端概览',
             link: '/technology/frontend/kun-frontend',
           },
@@ -311,6 +335,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
           {
             text: '更改 GitHub 邮箱后贡献消失',
             link: '/technology/tools/kun-github-email',
+          },
+        ],
+      },
+      {
+        text: 'Web',
+        collapsed: false,
+        items: [
+          {
+            text: '如何给一个网站接入邮箱验证码服务',
+            link: '/technology/web/kun-email',
           },
         ],
       },
