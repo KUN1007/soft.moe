@@ -30,4 +30,14 @@ export const friendList: FriendList[] = [
     name: '云楼汐',
     link: 'https://parsifa1.github.io/',
   },
+  {
+    avatar: '/avatar/花月喵梦.webp',
+    name: '花月喵梦',
+    link: 'https://nekomoon.cc/',
+  },
+  {
+    avatar: '/avatar/AnthonySummit.webp',
+    name: 'AnthonySummit',
+    link: 'https://csmoe.top/',
+  },
 ]
