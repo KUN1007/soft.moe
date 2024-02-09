@@ -37,7 +37,7 @@ export const friendList: FriendList[] = [
   },
   {
     avatar: '/avatar/AnthonySummit.webp',
-    name: 'AnthonySummit',
+    name: 'Anthony Summit',
     link: 'https://csmoe.top/',
   },
 ]
