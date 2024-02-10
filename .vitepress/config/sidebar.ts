@@ -381,6 +381,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
     ],
   },
   {
+    text: 'Professionalism',
+    collapsed: true,
+    items: [
+      {
+        text: '在遇到自己完全不会的技术栈时应该如何做?',
+        link: '/professionalism/kun-source',
+      },
+    ],
+  },
+  {
     text: 'Visualnovels',
     collapsed: true,
     items: [
