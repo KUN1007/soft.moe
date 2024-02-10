@@ -309,6 +309,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             ],
           },
           {
+            text: '关于 http1.1 与 http2 中 statusText 区别认识 (响应拿不到 statusText)',
+            link: '/technology/frontend/vue/kun-http',
+          },
+          {
             text: 'Web 前端概览',
             link: '/technology/frontend/kun-frontend',
           },
