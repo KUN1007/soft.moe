@@ -459,6 +459,7 @@ fatal: failed to write commit object
 
 ```zsh
 max-cache-ttl 2592000
+default-cache-ttl 2592000
 ```
 
 这就是 `60 * 60 * 24 * 30` 秒，一个月都不用输密码了（~~其实我想设个三年的，说不定下次我就这么干了~~）
