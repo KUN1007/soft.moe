@@ -67,7 +67,7 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 <br/>
 
-[kun-galgame-admin-next-swc](https://github.com/KUN1007/kun-galgame-admin-next-swc)
+[kun-galgame-admin-react-swc](https://github.com/KUN1007/kun-galgame-admin-react-swc)
 
 这个仓库是我们论坛的后台管理系统的前端
 
