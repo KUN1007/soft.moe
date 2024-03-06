@@ -320,6 +320,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             text: 'Nextjs',
             link: '/technology/frontend/kun-nextjs',
           },
+          {
+            text: '如何在提交时自动更新项目的版本号',
+            link: '/technology/frontend/kun-precommit',
+          },
         ],
       },
       {
