@@ -10,7 +10,7 @@
 
 ## 后台管理系统
 
-这个系统还在开发中: [kun-galgame-admin-nuxt](https://github.com/KUN1007/kun-galgame-admin-nuxt)
+这个系统还在开发中: [kun-galgame-admin-react-swc](https://github.com/KUN1007/kun-galgame-admin-react-swc)
 
 这个系统将会对用户的踩行为，已经发布的话题、回复、评论等进行管理，如果发现有特别多被踩的，或者纯粹的 spam 账户，我们会直接予以删除账户
 

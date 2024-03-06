@@ -28,15 +28,15 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: '项目目的和背景',
-            link: '/kun-visualnovel-docs/overview/purpose',
+            link: '/kun-visualnovel-docs/v1/overview/purpose',
           },
           {
             text: '主要功能和模块概览',
-            link: '/kun-visualnovel-docs/overview/features',
+            link: '/kun-visualnovel-docs/v1/overview/features',
           },
           {
             text: '技术栈介绍',
-            link: '/kun-visualnovel-docs/overview/tech-stack',
+            link: '/kun-visualnovel-docs/v1/overview/tech-stack',
           },
         ],
       },
@@ -46,11 +46,11 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: '开发环境配置要求',
-            link: '/kun-visualnovel-docs/configuration/setup',
+            link: '/kun-visualnovel-docs/v1/configuration/setup',
           },
           {
             text: '数据库（MongoDB）和缓存（Redis）的安装和配置',
-            link: '/kun-visualnovel-docs/configuration/db',
+            link: '/kun-visualnovel-docs/v1/configuration/db',
           },
         ],
       },
@@ -60,39 +60,39 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: 'Vite',
-            link: '/kun-visualnovel-docs/frontend/vite',
+            link: '/kun-visualnovel-docs/v1/frontend/vite',
           },
           {
             text: 'Vue 3',
-            link: '/kun-visualnovel-docs/frontend/vue3',
+            link: '/kun-visualnovel-docs/v1/frontend/vue3',
           },
           {
             text: 'Pinia',
-            link: '/kun-visualnovel-docs/frontend/pinia',
+            link: '/kun-visualnovel-docs/v1/frontend/pinia',
           },
           {
             text: 'Router',
-            link: '/kun-visualnovel-docs/frontend/router',
+            link: '/kun-visualnovel-docs/v1/frontend/router',
           },
           {
             text: 'Fetch API',
-            link: '/kun-visualnovel-docs/frontend/fetch',
+            link: '/kun-visualnovel-docs/v1/frontend/fetch',
           },
           {
             text: 'SCSS',
-            link: '/kun-visualnovel-docs/frontend/scss',
+            link: '/kun-visualnovel-docs/v1/frontend/scss',
           },
           {
             text: 'i18n',
-            link: '/kun-visualnovel-docs/frontend/i18n',
+            link: '/kun-visualnovel-docs/v1/frontend/i18n',
           },
           {
             text: 'localforage / Indexdb',
-            link: '/kun-visualnovel-docs/frontend/indexdb',
+            link: '/kun-visualnovel-docs/v1/frontend/indexdb',
           },
           {
             text: 'Milkdown',
-            link: '/kun-visualnovel-docs/frontend/Milkdown',
+            link: '/kun-visualnovel-docs/v1/frontend/Milkdown',
           },
         ],
       },
@@ -102,27 +102,27 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: 'Koa',
-            link: '/kun-visualnovel-docs/backend/koa',
+            link: '/kun-visualnovel-docs/v1/backend/koa',
           },
           {
             text: 'MVC',
-            link: '/kun-visualnovel-docs/backend/mvc',
+            link: '/kun-visualnovel-docs/v1/backend/mvc',
           },
           {
             text: 'Route',
-            link: '/kun-visualnovel-docs/backend/route',
+            link: '/kun-visualnovel-docs/v1/backend/route',
           },
           {
             text: 'Mongodb / Mongoose',
-            link: '/kun-visualnovel-docs/backend/mongodb',
+            link: '/kun-visualnovel-docs/v1/backend/mongodb',
           },
           {
             text: 'Redis',
-            link: '/kun-visualnovel-docs/backend/redis',
+            link: '/kun-visualnovel-docs/v1/backend/redis',
           },
           {
             text: 'JWT',
-            link: '/kun-visualnovel-docs/backend/jwt',
+            link: '/kun-visualnovel-docs/v1/backend/jwt',
           },
         ],
       },
@@ -132,23 +132,23 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: '生产环境的配置指南',
-            link: '/kun-visualnovel-docs/deploy/deploy-config',
+            link: '/kun-visualnovel-docs/v1/deploy/deploy-config',
           },
           {
             text: '构建前端和后端的指令或脚本',
-            link: '/kun-visualnovel-docs/deploy/script',
+            link: '/kun-visualnovel-docs/v1/deploy/script',
           },
           {
             text: '数据库和缓存的部署和配置',
-            link: '/kun-visualnovel-docs/deploy/db',
+            link: '/kun-visualnovel-docs/v1/deploy/db',
           },
           {
             text: '安全性考虑和最佳实践',
-            link: '/kun-visualnovel-docs/deploy/security',
+            link: '/kun-visualnovel-docs/v1/deploy/security',
           },
           {
             text: '维护与扩展',
-            link: '/kun-visualnovel-docs/deploy/maintenance',
+            link: '/kun-visualnovel-docs/v1/deploy/maintenance',
           },
         ],
       },
@@ -158,15 +158,15 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: '前后端交互接口文档',
-            link: '/kun-visualnovel-docs/structure/api',
+            link: '/kun-visualnovel-docs/v1/structure/api',
           },
           {
             text: '数据库字段含义说明',
-            link: '/kun-visualnovel-docs/structure/db',
+            link: '/kun-visualnovel-docs/v1/structure/db',
           },
           {
             text: '错误处理',
-            link: '/kun-visualnovel-docs/structure/error',
+            link: '/kun-visualnovel-docs/v1/structure/error',
           },
         ],
       },
@@ -176,7 +176,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: '常见问题',
-            link: '/kun-visualnovel-docs/issue/issue',
+            link: '/kun-visualnovel-docs/v1/issue/issue',
           },
         ],
       },
@@ -186,7 +186,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         items: [
           {
             text: '记录每个版本的更新内容和改动',
-            link: '/kun-visualnovel-docs/update/log',
+            link: '/kun-visualnovel-docs/v1/update/log',
           },
         ],
       },

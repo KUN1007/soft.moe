@@ -8,7 +8,7 @@
 
 考虑到我们没有任何收费行为，故而收支均衡只能靠赞助解决，没有赞助的话只能自掏腰包了
 
-我们想保持管理的透明化，所以我们设计了一个收支公示页面，以通用的 USD 结算
+我们想保持管理的透明化，所以我们设计了一个收支公示页面，以 USDT 结算
 
 这个公示页面会涵盖我们所有的收入和支出，收入来自于赞助，亏损来源于服务器
 
@@ -118,27 +118,3 @@ https://github.com/KUN1007/kungalgame-pure-css/tree/main/foo/draft
 ## 总结
 
 可以看到，经过了一年的各种设计，我们团队总算将这个论坛打磨成型了，这是一件极为不容易的事！
-
-### 我们前后有这么一些仓库地址
-
-[kungalgame-pure-css](https://github.com/KUN1007/kungalgame-pure-css)
-
-这个仓库相当于设计图
-
-[kun-galgame-vue](https://github.com/KUN1007/kun-galgame-vue)
-
-这个仓库是我们前后端分离式论坛的前端
-
-[kun-galgame-koa](https://github.com/KUN1007/kun-galgame-koa)
-
-这个仓库是我们前后端分离式论坛的后端
-
-[kun-galgame-admin-next](https://github.com/KUN1007/kun-galgame-admin-next)
-
-这个仓库是我们论坛的后台管理系统，在编写这篇文档的日子（12/ 25 / 2023）还在开发中
-
-[kun-galgame-nuxt3](https://github.com/KUN1007/kun-galgame-nuxt3)
-
-这个仓库是我们论坛的重构项目，我们抛弃了前后端分离式开发，选择了全栈框架
-
-
