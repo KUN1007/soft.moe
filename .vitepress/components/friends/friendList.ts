@@ -40,4 +40,14 @@ export const friendList: FriendList[] = [
     name: 'Anthony Summit',
     link: 'https://csmoe.top/',
   },
+  {
+    avatar: '/avatar/luohua.webp',
+    name: '洛华',
+    link: 'https://luohua.moe/',
+  },
+  {
+    avatar: '/avatar/alice.webp',
+    name: 'Alice Aierlanta',
+    link: 'https://blog.aierlanta.net/',
+  },
 ]
