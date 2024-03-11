@@ -20,5 +20,7 @@ Anthony Summit！一个！非常 A-Level 的人！将来会去旧金山学习！
 
 Alice Aierlanta！Alice 姐姐！正在向软件工程方向努力，我相信她会变得强大！
 
+non_hana！在 GitHub 认识的群友，正在努力成为一名 JS / TS 全栈工程师！
+
 如何成为朋友，非常简单，右上角联系我，然后给我你的头像，名字，还有网站链接就可以。
 

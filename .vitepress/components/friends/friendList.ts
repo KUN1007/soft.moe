@@ -50,4 +50,9 @@ export const friendList: FriendList[] = [
     name: 'Alice Aierlanta',
     link: 'https://blog.aierlanta.net/',
   },
+  {
+    avatar: '/avatar/non_hana.webp',
+    name: 'non_hana',
+    link: 'https://nonhana.xyz/',
+  },
 ]
