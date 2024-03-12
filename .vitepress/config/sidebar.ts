@@ -23,170 +23,196 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
     link: '/kun-visualnovel-docs/kun-forum',
     items: [
       {
-        text: 'Overview',
-        collapsed: false,
+        text: 'Version 1',
+        collapsed: true,
         items: [
           {
-            text: '项目目的和背景',
-            link: '/kun-visualnovel-docs/v1/overview/purpose',
+            text: 'Overview',
+            collapsed: false,
+            items: [
+              {
+                text: '项目目的和背景',
+                link: '/kun-visualnovel-docs/v1/overview/purpose',
+              },
+              {
+                text: '主要功能和模块概览',
+                link: '/kun-visualnovel-docs/v1/overview/features',
+              },
+              {
+                text: '技术栈介绍',
+                link: '/kun-visualnovel-docs/v1/overview/tech-stack',
+              },
+            ],
           },
           {
-            text: '主要功能和模块概览',
-            link: '/kun-visualnovel-docs/v1/overview/features',
+            text: 'Configuration',
+            collapsed: false,
+            items: [
+              {
+                text: '开发环境配置要求',
+                link: '/kun-visualnovel-docs/v1/configuration/setup',
+              },
+              {
+                text: '数据库（MongoDB）和缓存（Redis）的安装和配置',
+                link: '/kun-visualnovel-docs/v1/configuration/db',
+              },
+            ],
           },
           {
-            text: '技术栈介绍',
-            link: '/kun-visualnovel-docs/v1/overview/tech-stack',
+            text: 'Frontend',
+            collapsed: false,
+            items: [
+              {
+                text: 'Vite',
+                link: '/kun-visualnovel-docs/v1/frontend/vite',
+              },
+              {
+                text: 'Vue 3',
+                link: '/kun-visualnovel-docs/v1/frontend/vue3',
+              },
+              {
+                text: 'Pinia',
+                link: '/kun-visualnovel-docs/v1/frontend/pinia',
+              },
+              {
+                text: 'Router',
+                link: '/kun-visualnovel-docs/v1/frontend/router',
+              },
+              {
+                text: 'Fetch API',
+                link: '/kun-visualnovel-docs/v1/frontend/fetch',
+              },
+              {
+                text: 'SCSS',
+                link: '/kun-visualnovel-docs/v1/frontend/scss',
+              },
+              {
+                text: 'i18n',
+                link: '/kun-visualnovel-docs/v1/frontend/i18n',
+              },
+              {
+                text: 'localforage / Indexdb',
+                link: '/kun-visualnovel-docs/v1/frontend/indexdb',
+              },
+              {
+                text: 'Milkdown',
+                link: '/kun-visualnovel-docs/v1/frontend/Milkdown',
+              },
+            ],
+          },
+          {
+            text: 'Backend',
+            collapsed: false,
+            items: [
+              {
+                text: 'Koa',
+                link: '/kun-visualnovel-docs/v1/backend/koa',
+              },
+              {
+                text: 'MVC',
+                link: '/kun-visualnovel-docs/v1/backend/mvc',
+              },
+              {
+                text: 'Route',
+                link: '/kun-visualnovel-docs/v1/backend/route',
+              },
+              {
+                text: 'Mongodb / Mongoose',
+                link: '/kun-visualnovel-docs/v1/backend/mongodb',
+              },
+              {
+                text: 'Redis',
+                link: '/kun-visualnovel-docs/v1/backend/redis',
+              },
+              {
+                text: 'JWT',
+                link: '/kun-visualnovel-docs/v1/backend/jwt',
+              },
+            ],
+          },
+          {
+            text: 'Deploy',
+            collapsed: false,
+            items: [
+              {
+                text: '生产环境的配置指南',
+                link: '/kun-visualnovel-docs/v1/deploy/deploy-config',
+              },
+              {
+                text: '构建前端和后端的指令或脚本',
+                link: '/kun-visualnovel-docs/v1/deploy/script',
+              },
+              {
+                text: '数据库和缓存的部署和配置',
+                link: '/kun-visualnovel-docs/v1/deploy/db',
+              },
+              {
+                text: '安全性考虑和最佳实践',
+                link: '/kun-visualnovel-docs/v1/deploy/security',
+              },
+              {
+                text: '维护与扩展',
+                link: '/kun-visualnovel-docs/v1/deploy/maintenance',
+              },
+            ],
+          },
+          {
+            text: 'Structure',
+            collapsed: false,
+            items: [
+              {
+                text: '前后端交互接口文档',
+                link: '/kun-visualnovel-docs/v1/structure/api',
+              },
+              {
+                text: '数据库字段含义说明',
+                link: '/kun-visualnovel-docs/v1/structure/db',
+              },
+              {
+                text: '错误处理',
+                link: '/kun-visualnovel-docs/v1/structure/error',
+              },
+            ],
+          },
+          {
+            text: 'Issue',
+            collapsed: false,
+            items: [
+              {
+                text: '常见问题',
+                link: '/kun-visualnovel-docs/v1/issue/issue',
+              },
+            ],
+          },
+          {
+            text: 'Update Log',
+            collapsed: false,
+            items: [
+              {
+                text: '记录每个版本的更新内容和改动',
+                link: '/kun-visualnovel-docs/v1/update/log',
+              },
+            ],
           },
         ],
       },
       {
-        text: 'Configuration',
-        collapsed: false,
+        text: 'Version 2',
+        collapsed: true,
         items: [
           {
-            text: '开发环境配置要求',
-            link: '/kun-visualnovel-docs/v1/configuration/setup',
-          },
-          {
-            text: '数据库（MongoDB）和缓存（Redis）的安装和配置',
-            link: '/kun-visualnovel-docs/v1/configuration/db',
-          },
-        ],
-      },
-      {
-        text: 'Frontend',
-        collapsed: false,
-        items: [
-          {
-            text: 'Vite',
-            link: '/kun-visualnovel-docs/v1/frontend/vite',
-          },
-          {
-            text: 'Vue 3',
-            link: '/kun-visualnovel-docs/v1/frontend/vue3',
-          },
-          {
-            text: 'Pinia',
-            link: '/kun-visualnovel-docs/v1/frontend/pinia',
-          },
-          {
-            text: 'Router',
-            link: '/kun-visualnovel-docs/v1/frontend/router',
-          },
-          {
-            text: 'Fetch API',
-            link: '/kun-visualnovel-docs/v1/frontend/fetch',
-          },
-          {
-            text: 'SCSS',
-            link: '/kun-visualnovel-docs/v1/frontend/scss',
-          },
-          {
-            text: 'i18n',
-            link: '/kun-visualnovel-docs/v1/frontend/i18n',
-          },
-          {
-            text: 'localforage / Indexdb',
-            link: '/kun-visualnovel-docs/v1/frontend/indexdb',
-          },
-          {
-            text: 'Milkdown',
-            link: '/kun-visualnovel-docs/v1/frontend/Milkdown',
-          },
-        ],
-      },
-      {
-        text: 'Backend',
-        collapsed: false,
-        items: [
-          {
-            text: 'Koa',
-            link: '/kun-visualnovel-docs/v1/backend/koa',
-          },
-          {
-            text: 'MVC',
-            link: '/kun-visualnovel-docs/v1/backend/mvc',
-          },
-          {
-            text: 'Route',
-            link: '/kun-visualnovel-docs/v1/backend/route',
-          },
-          {
-            text: 'Mongodb / Mongoose',
-            link: '/kun-visualnovel-docs/v1/backend/mongodb',
-          },
-          {
-            text: 'Redis',
-            link: '/kun-visualnovel-docs/v1/backend/redis',
-          },
-          {
-            text: 'JWT',
-            link: '/kun-visualnovel-docs/v1/backend/jwt',
-          },
-        ],
-      },
-      {
-        text: 'Deploy',
-        collapsed: false,
-        items: [
-          {
-            text: '生产环境的配置指南',
-            link: '/kun-visualnovel-docs/v1/deploy/deploy-config',
-          },
-          {
-            text: '构建前端和后端的指令或脚本',
-            link: '/kun-visualnovel-docs/v1/deploy/script',
-          },
-          {
-            text: '数据库和缓存的部署和配置',
-            link: '/kun-visualnovel-docs/v1/deploy/db',
-          },
-          {
-            text: '安全性考虑和最佳实践',
-            link: '/kun-visualnovel-docs/v1/deploy/security',
-          },
-          {
-            text: '维护与扩展',
-            link: '/kun-visualnovel-docs/v1/deploy/maintenance',
-          },
-        ],
-      },
-      {
-        text: 'Structure',
-        collapsed: false,
-        items: [
-          {
-            text: '前后端交互接口文档',
-            link: '/kun-visualnovel-docs/v1/structure/api',
-          },
-          {
-            text: '数据库字段含义说明',
-            link: '/kun-visualnovel-docs/v1/structure/db',
-          },
-          {
-            text: '错误处理',
-            link: '/kun-visualnovel-docs/v1/structure/error',
-          },
-        ],
-      },
-      {
-        text: 'Issue',
-        collapsed: false,
-        items: [
-          {
-            text: '常见问题',
-            link: '/kun-visualnovel-docs/v1/issue/issue',
-          },
-        ],
-      },
-      {
-        text: 'Update Log',
-        collapsed: false,
-        items: [
-          {
-            text: '记录每个版本的更新内容和改动',
-            link: '/kun-visualnovel-docs/v1/update/log',
+            text: 'Refactoring',
+            collapsed: false,
+            items: [
+              {
+                text: '为什么要重构 Vue3 的项目',
+                link: '/kun-visualnovel-docs/v2/introduction/refactoring',
+              },
+              {
+                text: 'Nuxt3 项目结构总览',
+                link: '/kun-visualnovel-docs/v2/introduction/structure',
+              },
+            ],
           },
         ],
       },

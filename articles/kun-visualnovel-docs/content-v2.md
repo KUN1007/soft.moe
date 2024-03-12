@@ -14,12 +14,13 @@
 
 我们把原来写好的论坛，使用了 `Nuxt3` 框架进行了完全的重构，使其变得更加优秀。
 
-* [为什么要重构](v2/introduction/refactoring)
+* [为什么要重构 Vue3 的项目](v2/introduction/refactoring)
+* [Nuxt3 项目结构总览](v2/introduction/structure)
 
 ## 重构过程
 
 * [新建 Nuxt3 项目并集成依赖](v2/refactoring/setup)
-* [迁移 Vue3 项目](refactoring)
+* [如何将 Vue3 项目迁移到 Nuxt3](v2/refactoring/migration)
 
 ## 性能展示
 
