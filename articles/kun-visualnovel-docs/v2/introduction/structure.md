@@ -8,8 +8,6 @@
 
 :::
 
-## Nuxt3 官方项目结构介绍
-
 我们严格遵循官网推荐的最佳实现进行项目组织，并在其上针对我们的论坛应用进行扩展
 
 https://nuxt.com/docs/guide
@@ -292,5 +290,5 @@ Nuxt3 的配置文件
 
 关于详细使用，请看下一篇
 
-[.env.example](/kun-visualnovel-docs/v2/introduction/config)
+[Nuxt3 项目配置](/kun-visualnovel-docs/v2/introduction/config)
 

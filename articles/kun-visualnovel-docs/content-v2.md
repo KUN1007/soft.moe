@@ -1,4 +1,4 @@
-# KUN Visual Novel Documentation V1 | 鲲 Galgame 开发文档 Version 1
+# KUN Visual Novel Documentation V2 | 鲲 Galgame 开发文档 Version 2
 
 ::: tip
 

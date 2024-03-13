@@ -27,6 +27,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         collapsed: true,
         items: [
           {
+            text: '项目目录',
+            link: '/kun-visualnovel-docs/content-v1',
+          },
+          {
             text: 'Overview',
             collapsed: false,
             items: [
@@ -200,6 +204,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         text: 'Version 2',
         collapsed: true,
         items: [
+          {
+            text: '项目目录',
+            link: '/kun-visualnovel-docs/content-v2',
+          },
           {
             text: 'Introduction',
             collapsed: false,
