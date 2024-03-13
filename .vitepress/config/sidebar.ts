@@ -201,7 +201,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         collapsed: true,
         items: [
           {
-            text: 'Refactoring',
+            text: 'Introduction',
             collapsed: false,
             items: [
               {
@@ -211,6 +211,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
               {
                 text: 'Nuxt3 项目结构总览',
                 link: '/kun-visualnovel-docs/v2/introduction/structure',
+              },
+              {
+                text: '如何运行本项目',
+                link: '/kun-visualnovel-docs/v2/introduction/run',
               },
             ],
           },

@@ -16,6 +16,8 @@
 
 * [为什么要重构 Vue3 的项目](v2/introduction/refactoring)
 * [Nuxt3 项目结构总览](v2/introduction/structure)
+* [如何运行本项目](v2/introduction/run)
+* [Nuxt3 项目配置](v2/introduction/config)
 
 ## 重构过程
 

@@ -248,7 +248,11 @@ Pinia 的 store 定义，重构项目中我们依旧采用了 Pinia 作为项目
 
 ## .env.example
 
-这是我们项目所需环境实例文件，如果想要运行我们的项目，需要根据该文件自行在根目录创建一个 `.env` 文件，按照该文件的格式编写自己的环境配置
+这是我们项目所需环境实例文件，如果想要运行我们的项目，需要**根据该文件自行在根目录创建一个 `.env` 文件**，按照该文件的格式编写自己的环境配置
+
+关于详细使用，请看下一篇
+
+[.env.example](/kun-visualnovel-docs/v2/introduction/run#.env)
 
 ## .eslintignore
 
@@ -285,4 +289,8 @@ pm2 的配置文件
 ## nuxt.config.ts
 
 Nuxt3 的配置文件
+
+关于详细使用，请看下一篇
+
+[.env.example](/kun-visualnovel-docs/v2/introduction/config)
 
