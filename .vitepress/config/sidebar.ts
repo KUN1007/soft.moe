@@ -226,6 +226,20 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
               },
             ],
           },
+          {
+            text: 'Refactoring',
+            collapsed: false,
+            items: [
+              {
+                text: '新建 Nuxt3 项目并集成依赖',
+                link: '/kun-visualnovel-docs/v2/refactoring/setup',
+              },
+              {
+                text: '如何将 Vue3 项目迁移到 Nuxt3',
+                link: '/kun-visualnovel-docs/v2/refactoring/migration',
+              },
+            ],
+          },
         ],
       },
       {
