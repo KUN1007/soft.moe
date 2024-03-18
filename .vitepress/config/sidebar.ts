@@ -358,6 +358,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
                 text: '如何在 setup() 外使用 Pinia',
                 link: '/technology/frontend/vue/kun-pinia',
               },
+              {
+                text: '对 Vitepress 的介绍与使用 - 基于当前 blog',
+                link: '/technology/frontend/vue/kun-vitepress',
+              },
             ],
           },
           {

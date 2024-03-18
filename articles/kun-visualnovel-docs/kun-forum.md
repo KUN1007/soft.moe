@@ -87,7 +87,7 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 [kun-galgame-stickers-sveltekit](https://github.com/KUN1007/kun-galgame-stickers-sveltekit)
 
-这个仓库是我们论坛的子网站——[Galgame 表情包网站](https://stickers/kungal.com) 的仓库，它选择了目前极为现代的框架 SvelteKit
+这个仓库是我们论坛的子网站——[Galgame 表情包网站](https://stickers.kungal.com) 的仓库，它选择了目前极为现代的框架 SvelteKit
 
 ## 联系 / 加入我们
 
