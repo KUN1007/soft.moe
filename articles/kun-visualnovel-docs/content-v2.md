@@ -33,4 +33,4 @@
 ## 性能提升
 
 * [Nuxt3 SEO 最佳实践](v2/performance/seo)
-* [Nuxt3 首屏加载]
+* [Nuxt3 首屏加载](v2/performance/load)

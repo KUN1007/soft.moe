@@ -258,6 +258,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
                 text: 'Nuxt3 SEO 最佳实践',
                 link: '/kun-visualnovel-docs/v2/performance/seo',
               },
+              {
+                text: 'Nuxt3 首屏加载',
+                link: '/kun-visualnovel-docs/v2/performance/load',
+              },
             ],
           },
         ],
