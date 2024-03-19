@@ -240,6 +240,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
               },
             ],
           },
+          {
+            text: 'Overview',
+            collapsed: false,
+            items: [
+              {
+                text: 'Nuxt3 项目路由',
+                link: '/kun-visualnovel-docs/v2/overview/router',
+              },
+            ],
+          },
         ],
       },
       {

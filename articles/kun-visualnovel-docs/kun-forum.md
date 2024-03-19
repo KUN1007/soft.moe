@@ -17,9 +17,9 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 目前，我们的论坛有三个版本
 
-第一个版本为纯 HTML + CSS 实现，可当作 Version 0 版本，设计稿，忽略不计
+第一个版本为纯 HTML + CSS 实现，可当作 Version 0，设计稿，忽略不计
 
-第二个版本为 Vue3 + Koa 实现，为 Version 1，下面的它的文档
+第二个版本为 Vue3 + Koa 实现，为 Version 1，下面是它的文档
 
 [鲲 Galgame 论坛 Version 1 文档](content-v1)
 

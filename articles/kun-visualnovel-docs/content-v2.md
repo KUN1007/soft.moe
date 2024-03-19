@@ -26,6 +26,11 @@
 * [新建 Nuxt3 项目并集成依赖](v2/refactoring/setup)
 * [如何将 Vue3 项目迁移到 Nuxt3](v2/refactoring/migration)
 
+## 要点概览
+
+* [Nuxt3 项目路由](v2/overview/router)
+* 
+
 ## 性能展示
 
 * SEO
