@@ -29,9 +29,8 @@
 ## 要点概览
 
 * [Nuxt3 项目路由](v2/overview/router)
-* 
 
-## 性能展示
+## 性能提升
 
-* SEO
-* 首屏加载
+* [Nuxt3 SEO 最佳实践](v2/performance/seo)
+* [Nuxt3 首屏加载]
