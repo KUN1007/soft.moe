@@ -9,6 +9,7 @@ import './dark.scss'
 import Friends from '../components/friends/Friends.vue'
 import TouchFish from '../components/doc-after/TouchFish.vue'
 import Giscus from '../components/giscus/Giscus.vue'
+import KunImage from '../components/kun-image/KunImage.vue'
 
 export default {
   extends: Theme,
@@ -19,5 +20,7 @@ export default {
       'home-features-after': () => h(Friends),
     })
   },
-  enhanceApp({ app, router, siteData }) {},
+  enhanceApp({ app, router, siteData }) {
+    app.component('KunImage', KunImage)
+  },
 }
