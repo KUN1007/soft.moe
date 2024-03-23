@@ -207,7 +207,7 @@ Practice makes your perfect.
 * 规范措施 (ESLint, commitlint, Prettier 等)
 * 测试
 
-请注意，这是大型站点，自己折腾的话，不使用 `tailwind`, 不使用 `Typescript`, 不使用 UI 组建库，甚至不用框架都是完全可以的
+请注意，这是大型站点，自己折腾的话，不使用 `tailwind`, 不使用 `Typescript`, 不使用 UI 组件库，甚至不用框架都是完全可以的
 
 :::tip
 具体框架这些技术栈怎么找，我也说不完整
