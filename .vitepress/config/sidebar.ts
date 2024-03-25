@@ -358,6 +358,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             text: '如何临时下线一个网站',
             link: 'technology/deploy/down',
           },
+          {
+            text: '网站源站 ip 泄漏怎么办',
+            link: 'technology/deploy/ip-leak',
+          },
         ],
       },
       {
