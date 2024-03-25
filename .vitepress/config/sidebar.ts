@@ -351,8 +351,12 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         collapsed: false,
         items: [
           {
+            text: '如何将网站部署到 Cloudflare Tunnel',
+            link: 'technology/deploy/cf-tunnel',
+          },
+          {
             text: '如何临时下线一个网站',
-            link: 'technology/deploy/down.md',
+            link: 'technology/deploy/down',
           },
         ],
       },
