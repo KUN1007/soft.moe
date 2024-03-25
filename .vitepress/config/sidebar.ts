@@ -347,6 +347,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         ],
       },
       {
+        text: 'Deploy',
+        collapsed: false,
+        items: [
+          {
+            text: '如何临时下线一个网站',
+            link: 'technology/deploy/down.md',
+          },
+        ],
+      },
+      {
         text: 'Frontend',
         collapsed: false,
         items: [
