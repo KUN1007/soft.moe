@@ -267,6 +267,33 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         ],
       },
       {
+        text: 'Dashboard',
+        collapsed: true,
+        link: '/kun-visualnovel-docs/dashboard/overview',
+        items: [
+          {
+            text: 'KUN Visual Novel Forum Admin Documentation | 鲲 Galgame 论坛管理系统文档',
+            link: '/kun-visualnovel-docs/dashboard/overview',
+          },
+          {
+            text: '如何运行本项目的前后端',
+            link: '/kun-visualnovel-docs/dashboard/run',
+          },
+          {
+            text: 'React + Antd 后台管理系统前端简介',
+            link: '/kun-visualnovel-docs/dashboard/frontend',
+          },
+          {
+            text: 'Koa 后台管理系统后端简介',
+            link: '/kun-visualnovel-docs/dashboard/backend',
+          },
+          {
+            text: 'Nuxt 3 + React + Koa 跨项目开发指南',
+            link: '/kun-visualnovel-docs/dashboard/guide',
+          },
+        ],
+      },
+      {
         text: `Others`,
         collapsed: false,
         items: [
