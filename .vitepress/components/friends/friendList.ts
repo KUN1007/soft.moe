@@ -60,4 +60,9 @@ export const friendList: FriendList[] = [
     name: 'この世界最後の雨',
     link: 'https://toya.moe/',
   },
+  {
+    avatar: '/avatar/listder.webp',
+    name: 'listder',
+    link: 'https://blog.listder.xyz/',
+  },
 ]
