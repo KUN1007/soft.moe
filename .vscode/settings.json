@@ -39,6 +39,7 @@
     "hana",
     "Haruki",
     "iconify",
+    "immer",
     "indexdb",
     "INTLIFY",
     "Jetbrains",
@@ -120,6 +121,7 @@
     "webp",
     "yurzhang",
     "yuyu",
-    "ZEXRTH"
+    "ZEXRTH",
+    "zustand"
   ]
 }
