@@ -68,6 +68,6 @@ export const friendList: FriendList[] = [
   {
     avatar: '/avatar/AsperforMias.webp',
     name: 'AsperforMias',
-    link: 'https://blog.listder.xyz/',
+    link: 'https://mias.moe/',
   },
 ]
