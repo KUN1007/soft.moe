@@ -66,7 +66,7 @@ export const friendList: FriendList[] = [
     link: 'https://blog.listder.xyz/',
   },
   {
-    avatar: '/avatar/asperforMias.webp',
+    avatar: '/avatar/AsperforMias.webp',
     name: 'AsperforMias',
     link: 'https://blog.listder.xyz/',
   },
