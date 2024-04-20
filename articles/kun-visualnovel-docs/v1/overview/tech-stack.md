@@ -2,15 +2,15 @@
 
 ## 概览
 
-本项目主要采用 Vue + Nodejs 为技术栈，全面支持 Typescript
+本项目主要采用 Vue + Nodejs 为技术栈，全面支持 TypeScript
 
 **前端不依赖任何 UI 组件库**
 
 后端为 Koa
 
-前端采用了: Vite, Vue3 Composition API + Setup, Typescript, Pinia, SCSS, Vue-router, Milkdown, vue-i18n, indexdb
+前端采用了: Vite, Vue3 Composition API + Setup, TypeScript, Pinia, SCSS, Vue-router, Milkdown, vue-i18n, indexdb
 
-后端采用了: Nodejs, Webpack, Babel, Koa, Typescript, Redis, Mongoose, Mongodb, JWT, bcrypt, nodemailer, sharp
+后端采用了: Nodejs, Webpack, Babel, Koa, TypeScript, Redis, Mongoose, Mongodb, JWT, bcrypt, nodemailer, sharp
 
 ## 前端
 
@@ -24,19 +24,19 @@
 
 ### Vue
 
-我们选用了 Vue 最新的一套技术栈，Vue3 Composition API + Setup + Typescript
+我们选用了 Vue 最新的一套技术栈，Vue3 Composition API + Setup + TypeScript
 
 这是因为
 
 * 更加现代，技术栈不落后
 * Vue3 带来了强大的性能提升
 * 更加符合现代框架的写法
-* 更好的 Typescript 支持
+* 更好的 TypeScript 支持
 * Setup 写法非常简洁
 
 我们想把技术栈提升的尽可能新，其实当时应该使用 Nuxt3 的
 
-在项目中，我们使用了 `Teleport`, `TransitionGroup` 等多种 Vue3 最新的内置组件，并且使用了官网最推荐的良好 Typescript 实践
+在项目中，我们使用了 `Teleport`, `TransitionGroup` 等多种 Vue3 最新的内置组件，并且使用了官网最推荐的良好 TypeScript 实践
 
 我们的函数一律使用了箭头函数写法
 
@@ -46,11 +46,11 @@ const kun = () => {
 }
 ```
 
-### Typescript
+### TypeScript
 
-Typescript 的好处在是显而易见的，尤其是在大型项目中
+TypeScript 的好处在是显而易见的，尤其是在大型项目中
 
-对于本项目前端来说，Typescript 的使用体现在以下几个方面
+对于本项目前端来说，TypeScript 的使用体现在以下几个方面
 
 * Interface. 带来了极好的类型支持
 * No any. 本项目中不存在 Any 的声明
@@ -159,7 +159,7 @@ i18n 主要位于 `src/language` 目录下
 
 我们的后端没有使用常规的 `Java`, 原因是 `Java` 有些过饱和了
 
-我们对 `Nodejs` 进行了 `Typescript` 支持
+我们对 `Nodejs` 进行了 `TypeScript` 支持
 
 我们使用了以下 `Nodejs` package
 
@@ -187,7 +187,7 @@ i18n 主要位于 `src/language` 目录下
 
 Koa 框架是一个 `Nodejs` 的后端框架, 使用它的目的是 `Koa` 听起来像 `Koi` 所以比较萌
 
-我们对其进行了全面的 `Typescript` 支持
+我们对其进行了全面的 `TypeScript` 支持
 
 我们使用了以下的中间件
 
@@ -198,9 +198,9 @@ Koa 框架是一个 `Nodejs` 的后端框架, 使用它的目的是 `Koa` 听起
 * koa-static, koa 静态托管
 * koa2-connect-history-api-fallback, 页面刷新 404
 
-### Typescript
+### TypeScript
 
-我们后端的 `src` 资源文件夹全面支持 `Typescript`, 主要体现在以下几个方面
+我们后端的 `src` 资源文件夹全面支持 `TypeScript`, 主要体现在以下几个方面
 
 * Interface
 * Class. private
@@ -223,7 +223,7 @@ redis 的配置文件主要位于 `src/config/redisConfig.ts`
 
 Mongoose 是一个 `Nodejs` 中用于操作 `mongodb` 的驱动，或许您可能了解 `ORM` ，`mongoose` 就好比 `Hibernate`, `MyBatis` 之类的东东
 
-我们的项目在 `src/model` 文件夹中定义了 `Mongoose` 的 `schema`, 并使用 `Typescript` 规范了其 types
+我们的项目在 `src/model` 文件夹中定义了 `Mongoose` 的 `schema`, 并使用 `TypeScript` 规范了其 types
 
 ### Mongodb
 
