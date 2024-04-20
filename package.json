@@ -1,7 +1,8 @@
 {
   "name": "kun-blog",
   "description": "KUN's moe moe blog, KUN IS THE CUTEST!",
-  "packageManager": "pnpm@8.10.0",
+  "packageManager": "pnpm@9.0.4",
+  "package-manager-strict": false,
   "author": {
     "name": "kun",
     "email": "kungalgame@gamil.com"
