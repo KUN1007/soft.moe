@@ -113,6 +113,8 @@ https://github.com/KUN1007/kun-galgame-nuxt3/commits/master/
 
 :::
 
+21 / 04 / 2024 该错误已在[此次提交](https://github.com/KUN1007/kun-galgame-nuxt3/commit/8e8e1c390bd7315fedce0855470094b37b3e919f)被修复
+
 ### @/error -> @/server/utils/kunError
 
 ### @/middleware -> @/server/utils/increasingSequence
