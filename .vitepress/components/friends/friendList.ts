@@ -70,4 +70,9 @@ export const friendList: FriendList[] = [
     name: 'AsperforMias',
     link: 'https://mias.moe/',
   },
+  {
+    avatar: '/avatar/andatoshiki.webp',
+    name: 'Anda Toshiki',
+    link: 'https://toshiki.dev/',
+  },
 ]
