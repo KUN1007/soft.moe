@@ -75,4 +75,9 @@ export const friendList: FriendList[] = [
     name: 'Anda Toshiki',
     link: 'https://toshiki.dev/',
   },
+  {
+    avatar: '/avatar/HimenoSena.webp',
+    name: 'Himeno Sena',
+    link: 'https://sena.moemoechu.net/',
+  },
 ]
