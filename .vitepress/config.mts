@@ -5,7 +5,7 @@ import { socialLinksConfig } from './config/socialLinks'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "KUN's Blog",
-  description: "KUN's moe moe blog, KUN IS THE CUTEST!",
+  description: "KUN's moe blog, KUN IS THE CUTEST!",
   base: '/',
   srcDir: 'articles',
   outDir: './dist',

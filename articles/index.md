@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "KUN's Blog"
-  text: "KUN's moe moe blog, KUN IS THE CUTEST!"
+  text: "KUN's moe blog, KUN IS THE CUTEST!"
   tagline: KUN, Moe, CUTEST, animations, visual novel (galgame), programming. Picture from Ark Order.
   image:
     src: /kun.webp

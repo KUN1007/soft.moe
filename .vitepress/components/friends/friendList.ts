@@ -66,11 +66,6 @@ export const friendList: FriendList[] = [
     link: 'https://blog.listder.xyz/',
   },
   {
-    avatar: '/avatar/AsperforMias.webp',
-    name: 'AsperforMias',
-    link: 'https://mias.moe/',
-  },
-  {
     avatar: '/avatar/andatoshiki.webp',
     name: 'Anda Toshiki',
     link: 'https://toshiki.dev/',
@@ -79,5 +74,15 @@ export const friendList: FriendList[] = [
     avatar: '/avatar/HimenoSena.webp',
     name: 'Himeno Sena',
     link: 'https://sena.moemoechu.net/',
+  },
+  {
+    avatar: '/avatar/Canmi.webp',
+    name: 'Canmi',
+    link: 'https://canmi21.github.io/',
+  },
+  {
+    avatar: '/avatar/senku.webp',
+    name: '千空',
+    link: 'https://baliu8620.github.io/',
   },
 ]
