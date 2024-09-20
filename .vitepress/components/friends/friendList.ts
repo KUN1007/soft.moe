@@ -28,7 +28,7 @@ export const friendList: FriendList[] = [
   {
     avatar: '/avatar/云楼汐.webp',
     name: '云楼汐',
-    link: 'https://parsifa1.github.io/',
+    link: 'https://blog.cloudti.de/',
   },
   {
     avatar: '/avatar/花月喵梦.webp',
@@ -84,5 +84,10 @@ export const friendList: FriendList[] = [
     avatar: '/avatar/senku.webp',
     name: '千空',
     link: 'https://baliu8620.github.io/',
+  },
+  {
+    avatar: '/avatar/tasty.webp',
+    name: '極限風味',
+    link: 'https://ex-tasty.com/',
   },
 ]
