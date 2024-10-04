@@ -29,6 +29,7 @@
 ## 要点概览
 
 * [Nuxt3 项目路由](v2/overview/router)
+* [Nuxt3 Socket.IO 实现实时聊天室](v2/overview/socket.io)
 
 ## 性能提升
 
