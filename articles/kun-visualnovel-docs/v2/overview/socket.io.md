@@ -10,6 +10,11 @@
 * MongoDB 如何设计 ChatRoom Model 和 Chat Message Model
 * 实时消息通知实现逻辑
 * 消息持久化
+* 错误处理
+* 已读消息（咕咕咕中）
+* 消息 Reactions（咕咕咕中）
+* 撤回消息（咕咕咕中）
+* 群聊（咕咕咕中）
 
 ## 聊天室路由
 
@@ -203,6 +208,7 @@ export default defineNitroPlugin((nitroApp: NitroApp) => {
       },
       websocket: {
         open(peer) {
+          // @ts-expect-error private method
           const nodeContext = peer.ctx.node
           const req = nodeContext.req
 
@@ -235,57 +241,40 @@ export default defineNitroPlugin((nitroApp: NitroApp) => {
 
 考虑到我们要兼容一下 `private chat` 和 `chat group` 这两种类型的聊天, 我们需要新建两个 MongoDB model
 
-### `/server/model/chat-message.ts`
+### `/server/model/types/chat-message.d.ts`
 
 ``` typescript
-import mongoose from 'mongoose'
-import increasingSequence from '../utils/increasingSequence'
-import type { ChatMessageAttributes } from './types/chat-message'
+import type { UserAttributes } from './user'
 
-const ChatMessageSchema = new mongoose.Schema<ChatMessageAttributes>(
-  {
-    cmid: { type: Number, unique: true },
-    crid: { type: Number, required: true },
-    sender_uid: { type: Number, required: true },
-    receiver_uid: { type: Number, default: 0 },
-    content: { type: String, default: '', maxlength: 1000 },
-    time: { type: Number, default: () => Date.now() },
-    status: { type: String, default: 'pending' },
-    is_recalled: { type: Boolean, default: false },
-    recalled_time: { type: Number },
-    read_by: {
-      type: [
-        {
-          uid: { type: Number, required: true },
-          read_time: { type: Number, required: true }
-        }
-      ],
-      default: []
-    },
+export interface MessageRead {
+  uid: number
+  read_time: number
+}
 
-    reactions: {
-      type: [
-        {
-          uid: { type: Number, required: true },
-          reaction: { type: String, required: true }
-        }
-      ],
-      default: []
-    }
-  },
-  { timestamps: { createdAt: 'created', updatedAt: 'updated' } }
-)
+export interface MessageReaction {
+  uid: number
+  reaction: string
+}
 
-ChatMessageSchema.pre('save', increasingSequence('cmid'))
+export interface ChatMessageAttributes {
+  cmid: number
+  chatroom_name: string
+  sender_uid: number
+  receiver_uid: number
+  content: string
+  to_uid: number
+  time: number
+  status: 'pending' | 'sent' | 'read'
+  is_recalled: boolean
+  recalled_time: number
+  read_by: MessageRead[]
+  reactions: MessageReaction[]
 
-ChatMessageSchema.virtual('user', {
-  ref: 'user',
-  localField: 'sender_uid',
-  foreignField: 'uid'
-})
+  user: UserAttributes[]
 
-const ChatMessageModel = mongoose.model('chat_message', ChatMessageSchema)
-export default ChatMessageModel
+  created: Date
+  updated: Date
+}
 ```
 
 我们注意到这个 model, 有几点需要解释
@@ -302,36 +291,28 @@ export default ChatMessageModel
 
 `reactions` 对消息的 `reactions`, 可以点赞这条消息等
 
-### `/server/model/chat-room.ts`
+### `/server/model/types/chat-room.d.ts`
 
 ``` typescript
-import mongoose from 'mongoose'
-import increasingSequence from '../utils/increasingSequence'
-import type { ChatRoomAttributes } from './types/chat-room'
+interface LastMessage {
+  sender_uid: number
+  sender_name: string
+  content: string
+  time: number
+}
 
-const ChatRoomSchema = new mongoose.Schema<ChatRoomAttributes>(
-  {
-    crid: { type: Number, unique: true },
-    name: { type: String, default: '' },
-    avatar: { type: String, default: '' },
-    type: { type: String, required: true },
-    participants: { type: [Number], required: true },
-    admins: { type: [Number], default: [] },
-    last_message: {
-      content: { type: String, default: '' },
-      time: { type: Number, default: 0 },
-      sender_uid: { type: Number, default: 0 },
-      sender_name: { type: String, default: '' }
-    }
-  },
-  { timestamps: { createdAt: 'created', updatedAt: 'updated' } }
-)
+export interface ChatRoomAttributes {
+  crid: number
+  name: string
+  type: 'private' | 'group'
+  avatar: string
+  participants: number[]
+  admins: number[]
+  last_message: LastMessage
 
-ChatRoomSchema.pre('save', increasingSequence('crid'))
-
-const ChatRoomModel = mongoose.model('chat_room', ChatRoomSchema)
-
-export default ChatRoomModel
+  created: Date
+  updated: Date
+}
 ```
 
 用户每新建一个与其它用户的聊天, 或者创建一个群组, 都是新建了一个 `chatroom`
@@ -362,7 +343,7 @@ export default ChatRoomModel
 
 ### 用户加入聊天
 
-当用户进入聊天页面的时候, 会为用户自动创建房间, socket 会发送一个 `joinChat` 的 event, 并携带被聊天用户的 uid 发送给后端的 socket 实例
+当用户进入聊天页面的时候, 会为用户自动创建房间, socket 会发送一个 `private:join` 的 event, 并携带被聊天用户的 uid 发送给后端的 socket 实例
 
 同时还会调用一个 `getMessageHistory` 的函数, 用以检查用户是否有历史消息
 
@@ -372,8 +353,8 @@ export default ChatRoomModel
 
 ``` typescript
 onMounted(async () => {
+  socket.emit('private:join', uid)
   messages.value = await getMessageHistory()
-  socket.emit('joinChat', uid)
   nextTick(() => scrollToBottom())
 })
 ```
@@ -381,18 +362,15 @@ onMounted(async () => {
 后端
 
 ``` typescript
-  socket.on('joinChat', (receiverUid: number) => {
+  socket.on('private:join', (receiverUid: number) => {
     const uid = socket.payload?.uid
     userSockets.set(uid, socket)
-
-    if (uid) {
-      const roomId = generateRoomId(uid, receiverUid)
-      socket.join(roomId)
-    }
+    const roomId = generateRoomId(uid, receiverUid)
+    socket.join(roomId)
   })
 ```
 
-`socket` 检测到用户 `joinChat` 的 event, 获取到前端发送的被聊天用户 uid, 此时, 后端拥有了聊天用户和被聊天用户双方的 uid
+`socket` 检测到用户 `private:join` 的 event, 获取到前端发送的被聊天用户 uid, 此时, 后端拥有了聊天用户和被聊天用户双方的 uid
 
 根据我们最前面提到的 `generateRoomId` 的逻辑, 两个用户互相聊天生成的 `chatroom-id` 的唯一的, 所以我们可以这么做
 
@@ -414,58 +392,38 @@ const sendMessage = async () => {
   if (!messageInput.value.trim()) {
     return
   }
-
-  const newMessage = await $fetch(`/api/message/chat/private`, {
-    method: 'POST',
-    query: { receiverUid: uid },
-    body: { content: messageInput.value },
-    watch: false,
-    ...kungalgameResponseHandler
-  })
-
-  if (typeof newMessage !== 'string') {
-    messages.value.push(newMessage)
-    socket.emit('sendingMessage', newMessage)
-    messageInput.value = ''
-  }
-
-  nextTick(() => scrollToBottom())
+  socket.emit('message:sending', uid, messageInput.value)
 }
 ```
 
-用户先将消息发送给后端, 将消息创建好, 返回创建的消息
-
-如果消息成功创建, 就从后端拿到刚刚创建好的消息, 使用 socket 的 `emit` 传递给后端 `sendingMessage` 事件, 并携带新创建的消息
-
-`nextTick` 之后使用户的聊天容器滚动到最底部的位置
+这里直接创建一个 `message:sending` 的 event 用于发送消息
 
 后端
 
 ``` typescript
-  socket.on('sendingMessage', async (message: Message) => {
+  socket.on('message:sending', async (receiverUid: number, content: string) => {
     const uid = socket.payload?.uid
     const sendingMessageUserSocket = userSockets.get(uid)
 
-    if (sendingMessageUserSocket && uid) {
-      const roomId = generateRoomId(uid, message.receiverUid)
-      sendingMessageUserSocket.to(roomId).emit('receivedMessage', message)
-    }
+    const message = await sendingMessage(uid, receiverUid, content)
+
+    const roomId = generateRoomId(uid, receiverUid)
+    sendingMessageUserSocket.emit('message:sent', message)
+    sendingMessageUserSocket.to(roomId).emit('message:received', message)
   })
 ```
 
-监测到前端发送的 `sendingMessage` 事件, 从刚刚我们保存的 userSockets Map 中尝试获取用户的 socket, 如果获取到, 则使用这个 socket 向房间中发送传递过来的消息
+1. 监测到前端发送的 `message:sending` 事件, 从刚刚我们保存的 userSockets Map 中尝试获取用户的 socket, 如果获取到, 则使用这个 socket 向房间中发送传递过来的消息
 
-这里重新生成了双方的 `chatroom-id` 然后使用 `to()` 方法送达了指定的 chatroom, 并向前端的 socket 发送 `receivedMessage` 事件, 携带了消息
+这里重新生成了双方的 `chatroom-id` 然后使用 `to()` 方法送达了指定的 chatroom, 并向前端的 socket 发送 `message:received` 事件, 携带了消息
 
 需要注意的是, 这里使用到的是 `Socket.IO` 本身的特性, 具体来说就是
 
 > 在 socket.io 中，当一个 socket 加入了某个房间（通过 `join(room)` 方法），如果该 socket 使用 `socket.to(room).emit(event, data)` 向这个房间广播消息，这个消息会发送给**除了发送者之外的所有已加入该房间的其他 socket**
 
-具体来说
+1. 如果使用 `socket.emit(event, data)`, 消息只会发送给当前连接的客户端（即自身）
 
-如果使用 `socket.emit(event, data)`, 消息只会发送给当前连接的客户端（即自身）
-
-如果使用 `socket.to(room).emit(event, data)` 或者 io.to(room).emit(event, data)，消息会广播给加入了该房间的其他 socket，但不包括发送消息的这个 socket
+2. 如果使用 `socket.to(room).emit(event, data)` 或者 io.to(room).emit(event, data)，消息会广播给加入了该房间的其他 socket，但不包括发送消息的这个 socket
 
 所以，假如 socket A 加入了房间 room1，它发出 `socket.to('room1').emit('someEvent', someData)`，那么房间 room1 中除了 A 以外的其他 socket（比如 B 和 C）都会收到 someEvent 事件，而 A 自己不会收到这个事件
 
@@ -476,20 +434,58 @@ const sendMessage = async () => {
 根据上面的分析, 另一个用户肯定会收到消息, 我们已经在前端监听了 `receivedMessage` 这个 event
 
 ``` typescript
-onMounted(async () => {
-  socket.on('receivedMessage', (msg: Message) => {
-    messages.value.push(msg)
-    nextTick(() => scrollToBottom())
+  socket.on('message:received', (msg: Message) => {
+    if (msg.receiverUid === currentUserUid && msg.sender.uid === uid) {
+      messages.value.push(msg)
+      replaceAsideItem(msg)
+      nextTick(() => {
+        scrollToBottom()
+      })
+    }
   })
-  nextTick(() => scrollToBottom())
-})
 ```
 
-注意, 根据上面的分析, 刚才发送的 `receivedMessage` 这个 event, 只会被除了发送这个消息的用户之外的其它用户收到
+注意, 根据上面的分析, 刚才发送的 `message:received` 这个 event, 只会被除了发送这个消息的用户之外的其它用户收到
 
 当收到这个 event 之后, 我们将这个 event 携带的, 刚才另一个用户发送过来的 message, push 给当前用户已有的消息数组中, 并将当前用户的 message model 滚动, 然后就会出现一个神奇的效果
 
 <video controls loop playsinline width="100%" src="https://cdn.jsdelivr.net/gh/kun-moe/kun-image@main/blog/202410041948002.mp4" />
+
+### 更新侧边栏的消息
+
+左侧的最新一条消息的预览当然要随着收到消息和发布消息一同变化, 这个功能的实现可以通过简单的替换左侧的 asideItems array 实现, 因为发送的消息 `Message` 类型都可以直接在本地被构建
+
+上面的代码中, 注意到我们有一行 `replaceAsideItem()`, 这个函数实现了这个功能
+
+```typescript
+import type { AsideItem, Message } from '~/types/api/chat-message'
+
+export const asideItems = ref<AsideItem[]>([])
+
+export const replaceAsideItem = (message: Message) => {
+  const targetIndex = asideItems.value.findIndex(
+    (item) => item.chatroomName === message.chatroomName
+  )
+
+  if (targetIndex !== -1) {
+    asideItems.value[targetIndex].content = message.content
+    asideItems.value[targetIndex].time = message.time
+    asideItems.value[targetIndex].count++
+  }
+
+  asideItems.value.sort((a, b) => b.time - a.time)
+}
+```
+
+这里的核心是使用了 `findIndex` 这个方法, 使得响应式数组内容被替换的同时保持数组的响应性
+
+对于最后的排序这一步, 如果有多个用户同时给此用户发消息, aside 的项目会根据发送的时间重新排列
+
+而我们做到以上的步骤不需要任何新的请求, 这在目前看来是较为合理的
+
+对于 Nuxt3 / Vue3 来说, 有一个叫 `<TransitionGroup>` 的组件, 本来我想到这里可以用到, 但是使用后却不生效, 原因未知, 它的效果大概是这样的
+
+https://vuejs.org/examples/#list-transition
 
 ### 用户离开聊天
 
@@ -512,6 +508,8 @@ onBeforeUnmount(() => {
 这里的 onKeydown 是用户按下 enter 发送消息的 event, 对于 `Vue` 来说可以在 `onBeforeUnmount` hook 上移除事件以免内存泄漏
 
 然后我们向后端 socket 发送 `leaveChat` 这个 event
+
+看起来的话, 是当用户切换到与另一个用户的聊天时, 视为退出与另一个用户的聊天
 
 后端
 
@@ -546,6 +544,333 @@ socket.on('leaveChat', async (message: Message) => {
 
 但是如果之后我们开发出更加复杂的聊天机制, 这样设计将会是必要的
 
-TODO:
+### 加载历史消息
+
+目前我们设置的是一次加载 30 条消息, 采用点击加载的方式
+
+因为虚拟滚动的无限列表我还不会写, 写不好这个东东, 不想用现成的轮子
+
+所以等以后我技术提高一些再做吧
+
+前端
+
+```typescript
+const handleLoadHistoryMessages = async () => {
+  if (!historyContainer.value) {
+    return
+  }
+
+  const previousScrollHeight = historyContainer.value.scrollHeight
+  const previousScrollTop = historyContainer.value.scrollTop
+
+  pageData.page += 1
+  const histories = await getMessageHistory()
+
+  if (histories.length > 0) {
+    messages.value.unshift(...histories)
+
+    nextTick(() => {
+      if (historyContainer.value) {
+        const newScrollHeight = historyContainer.value.scrollHeight
+        historyContainer.value.scrollTo({
+          top: previousScrollTop + (newScrollHeight - previousScrollHeight)
+        })
+      }
+    })
+  } else {
+    isLoadHistoryMessageComplete.value = true
+  }
+}
+```
+
+我们设计的是在消息的值变化时, 会自动将聊天容器滚动到底部, 但是在加载历史消息的时候我们并不需要这一点
+
+我们需要的是让容器的滚动停留在加载历史消息的那个位置, 以便用户看到以前的消息和新加载出来的消息, 所以需要记录一下以前容器滚动了多高的距离
+
+然后我们获取消息, 将旧的消息插入在当前已有消息的前面, 并滚动容器（这时是将容器滚动到当前保存的位置, 我们没有使用 `behavior: smooth` 的选项, 以便用户看起来页面是不动的）
+
+同时判断消息是否加载完毕, 若加载完毕则停止加载
+
+后端
+
+```typescript
+export default defineEventHandler(async (event) => {
+  const userInfo = await getCookieTokenInfo(event)
+  if (!userInfo) {
+    return kunError(event, 10115, 205)
+  }
+  const uid = userInfo.uid
+
+  const { receiverUid, page, limit }: MessageHistoryRequest = getQuery(event)
+  if (!receiverUid || !page || !limit) {
+    return kunError(event, 10507)
+  }
+  if (parseInt(receiverUid) === userInfo.uid) {
+    return kunError(event, 10401)
+  }
+  if (limit !== '30') {
+    return kunError(event, 10209)
+  }
+  const roomId = generateRoomId(parseInt(receiverUid), uid)
+
+  const room = await ChatRoomModel.findOne({ name: roomId }).lean()
+  if (!room) {
+    await ChatRoomModel.create({
+      name: roomId,
+      type: 'private',
+      participants: [uid, receiverUid],
+      last_message: { time: Date.now() }
+    })
+
+    return []
+  }
+
+  const skip = (parseInt(page) - 1) * parseInt(limit)
+  const histories = await ChatMessageModel.find({ chatroom_name: roomId })
+    .sort({ cmid: -1 })
+    .skip(skip)
+    .limit(parseInt(limit))
+    .populate('user', 'uid avatar name', UserModel)
+    .lean()
+
+  const cmidArray = histories
+    .filter((message) => !message.read_by.some((read) => read.uid === uid))
+    .map((message) => message.cmid)
+  if (cmidArray.length > 0) {
+    await ChatMessageModel.updateMany(
+      { cmid: { $in: cmidArray }, 'read_by.uid': { $ne: uid } },
+      { $push: { read_by: { uid, read_time: Date.now() } } }
+    )
+  }
+
+  const messages: Message[] = histories.map((message) => ({
+    cmid: message.cmid,
+    chatroomName: message.chatroom_name,
+    sender: {
+      uid: message.user[0].uid,
+      name: message.user[0].name,
+      avatar: message.user[0].avatar
+    },
+    receiverUid: parseInt(receiverUid),
+    content: message.content,
+    time: message.time,
+    status: message.status
+  }))
+
+  return messages.reverse()
+})
+```
+
+我们接受了 `receiverUid`, `page`, `limit` 这三个查询参数, 然后根据分页的信息查询出了对应的 histories, 最后调用 `reverse()` 将其返回, 因为消息的发送是从旧到新的
+
+我们在向前端返回这些消息的同时已读了消息, 这样不用多次请求
+
+我尝试用 `IntersectionObserver` 写过根据窗口内可见消息数量已读消息的逻辑, 但是太过复杂, 第一版本暂时去掉实时已读的功能
 
 ## 消息持久化
+
+发出去的消息当然是要保存的, **我们目前并不会承诺将用户的聊天记录永久保存**, 因为之后可能会有大的变动导致消息全部丢失
+
+但是这种不可逆的破坏性更改, 可能性较低
+
+### 聊天室持久化
+
+当用户点击另一个用户主页的聊天按钮时, 会触发聊天, 这时会初始化一个聊天室
+
+如果聊天室里没有任何消息, 双方都是看不到聊天室的
+
+在我们上面获取历史消息的代码中, 存在下面的代码
+
+```typescript
+  const roomId = generateRoomId(parseInt(receiverUid), uid)
+
+  const room = await ChatRoomModel.findOne({ name: roomId }).lean()
+  if (!room) {
+    await ChatRoomModel.create({
+      name: roomId,
+      type: 'private',
+      participants: [uid, receiverUid],
+      last_message: { time: Date.now() }
+    })
+
+    return []
+  }
+```
+
+在进入另一个用户聊天界面时, 会获取一次消息, 如果没有房间, 会自动为两个用户之间创建一个聊天室
+
+这其实是群聊的雏形, 我们在设计时就考虑好了以后扩展的可能性
+
+### 发送消息持久化
+
+我们在上面用户发送消息, 调用 `message:sending` 的时候, 就可以将用户发送的消息保存在数据库中了
+
+上面的 `message:sending` 中间有一句 `const message = await sendingMessage(uid, receiverUid, content)`, 它的实现是这样的
+
+```typescript
+import UserModel from '~/server/models/user'
+import ChatRoomModel from '~/server/models/chat-room'
+import ChatMessageModel from '~/server/models/chat-message'
+import type { Message } from '~/types/api/chat-message'
+
+export const sendingMessage = async (
+  uid: number,
+  receiverUid: number,
+  content: string
+) => {
+  const user = await UserModel.findOne({ uid }).lean()
+
+  const roomId = generateRoomId(receiverUid, uid)
+  await ChatRoomModel.findOneAndUpdate(
+    { name: roomId },
+    {
+      last_message: {
+        content,
+        time: Date.now(),
+        sender_uid: uid,
+        sender_name: user!.name
+      }
+    }
+  )
+
+  const message = await ChatMessageModel.create({
+    chatroom_name: roomId,
+    sender_uid: uid,
+    receiver_uid: receiverUid,
+    content,
+    status: 'sent'
+  })
+
+  const responseData: Message = {
+    cmid: message.cmid,
+    chatroomName: message.chatroom_name,
+    sender: {
+      uid: user!.uid,
+      name: user!.name,
+      avatar: user!.avatar
+    },
+    receiverUid: receiverUid,
+    content: message.content,
+    time: message.time,
+    status: message.status
+  }
+
+  return responseData
+}
+```
+
+可以看到, 我们在发送消息时, 首先更新了两个用户所在的聊天室的最后一条消息的信息, 然后创建了消息并返回
+
+我们目前的还不是完整版, 之后还会加入撤回消息的功能
+
+## 错误处理
+
+`Socket.IO` 在是不会返回数据的, 数据仅存在与回调函数中, 这意味着错误处理也需要使用 socket.io 本身来处理
+
+在完整的 `message:sending` event 中, 有下面的代码
+
+```typescript
+    if (!uid) {
+      socket.emit(ERROR_CODES.MISSING_UID)
+      return false
+    }
+    if (uid === receiverUid) {
+      socket.emit(ERROR_CODES.CANNOT_SEND_MESSAGE_TO_YOURSELF)
+      return false
+    }
+    if (!sendingMessageUserSocket) {
+      socket.emit(ERROR_CODES.INVALID_SOCKET)
+      return false
+    }
+```
+
+由于错误的类型目前较少, 我们采用简单的对象 key-value 存储错误信息, 然后使用 socket 返回给前端
+
+注意这里 `emit` 没有 `to`, 这意味着会返回错误给消息的发布人
+
+前端我们也可以使用一个简单的对象映射来解决错误处理
+
+``` typescript
+const ERROR_MESSAGES = {
+  'socket:error:1': {
+    'en-us': 'User ID is missing, please log in again.',
+    'ja-jp': 'ユーザーIDが見つかりません。再度ログインしてください。',
+    'zh-cn': '用户 ID 丢失，请重新登录。',
+    'zh-tw': '使用者 ID 遺失，請重新登入。'
+  },
+  'socket:error:2': {
+    'en-us': 'Invalid user socket, please refresh the page.',
+    'ja-jp': '無効なユーザー接続です。ページを更新してください。',
+    'zh-cn': '无效的用户连接，请刷新页面。',
+    'zh-tw': '無效的使用者連線，請重新整理頁面。'
+  },
+  'socket:error:3': {
+    'en-us': 'Cannot send a message to yourself.',
+    'zh-cn': '不能给自己发送消息。',
+    'ja-jp': '自分にメッセージを送信することはできません。',
+    'zh-tw': '不能傳送訊息給自己。'
+  }
+}
+
+export const useSocketIOErrorHandler = () => {
+  const socket = useSocketIO()
+
+  onMounted(() => {
+    socket.on('socket:error:1', () =>
+      useMessage(ERROR_MESSAGES['socket:error:1'], 'error')
+    )
+
+    socket.on('socket:error:2', () =>
+      useMessage(ERROR_MESSAGES['socket:error:2'], 'error')
+    )
+
+    socket.on('socket:error:3', () =>
+      useMessage(ERROR_MESSAGES['socket:error:3'], 'error')
+    )
+  })
+}
+```
+
+这可以成为一个简单的 `composables` 以用于任何组件中
+
+其中 `useMessage` 的签名为
+
+``` typescript
+/**
+ * @param {number} messageData - Message i18n object
+ * @param {type} type - Type of the message, can be one of `warn`, `success`, `error`, or `info`
+ * @param {number} duration - Display duration of the message, optional, default is 3 seconds
+ * @param {boolean} richText - Whether the message text support html
+ */
+export const useMessage = (
+  messageData: number | KunLanguage,
+  type: MessageType,
+  duration?: number,
+  richText?: boolean
+) => {}
+```
+
+它是可以接受一个 `KunLanguage` 对象作为参数直接实现 i18n 的, 无需使用 `$t()`, 这在一定程度上增加了便利
+
+## 已读消息（咕咕咕中）
+
+这个功能较为复杂, 需要考虑下面的点
+
+1. 如何设计已读消息的逻辑
+2. 数据库层面如何实现已读消息
+3. 用户在发表消息时, 如果另一个用户也在看着这个用户发表的消息, 如何让这个用户立即知道他的消息已读了
+4. 用户在切换到与别的用户的聊天页面时, 有别的用户同时给他发消息, 侧边栏的消息计数如何更新
+5. 用户会将窗口向上滚动以阅读消息, 如何在用户阅读消息时立即让另一名用户知道他的消息已读
+6. 还有很多细节...
+
+上面这些我已经实现了, 但是还是存在细微的错误, 于是。。。~~还是把已读功能咕咕咕掉吧~~
+
+## 消息 Reactions（咕咕咕中）
+
+类似于 Telegram 的 Message Reactions, 现代聊天软件应该普遍支持
+
+## 撤回消息（咕咕咕中）
+
+## 群聊（咕咕咕中）
+
+~~这个是真的有可能彻底咕咕咕了~~
