@@ -90,4 +90,9 @@ export const friendList: FriendList[] = [
     name: '極限風味',
     link: 'https://ex-tasty.com/',
   },
+  {
+    avatar: '/avatar/xiaohuo.webp',
+    name: '小火',
+    link: 'https://www.xiaohuo.icu/',
+  },
 ]
