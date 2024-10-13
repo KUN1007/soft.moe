@@ -95,4 +95,9 @@ export const friendList: FriendList[] = [
     name: '小火',
     link: 'https://www.xiaohuo.icu/',
   },
+  {
+    avatar: '/avatar/86.webp',
+    name: '86',
+    link: 'https://hachiroku8620.blogspot.com/',
+  },
 ]
