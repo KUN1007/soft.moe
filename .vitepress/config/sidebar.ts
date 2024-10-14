@@ -402,6 +402,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         collapsed: false,
         items: [
           {
+            text: 'GitHub',
+            collapsed: false,
+            items: [
+              {
+                text: '如何为项目添加 GitHub Issue Template',
+                link: '/technology/frontend/github/kun-github-issue-template',
+              },
+            ],
+          },
+          {
             text: 'Svelte',
             collapsed: false,
             items: [
