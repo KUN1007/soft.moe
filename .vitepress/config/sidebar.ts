@@ -413,6 +413,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
                 text: '为项目添加 ESLint 和 typecheck 的 GitHub 工作流',
                 link: '/technology/frontend/github/kun-github-workflow-lint-check',
               },
+              {
+                text: '如何在 Git 提交时创建一个有多个作者的提交',
+                link: '/technology/frontend/github/kun-github-multiple-authors',
+              },
             ],
           },
           {
