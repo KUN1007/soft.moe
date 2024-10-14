@@ -423,6 +423,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
                 text: '如何将一个现有的 Vue3 项目改写为 Nuxt3 项目',
                 link: '/technology/frontend/nuxt3/kun-nuxt3',
               },
+              {
+                text: '记录最新版 Nuxt3 ESLint 的配置方式',
+                link: '/technology/frontend/nuxt3/kun-eslint',
+              },
             ],
           },
           {
