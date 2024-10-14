@@ -409,6 +409,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
                 text: '如何为项目添加 GitHub Issue Template',
                 link: '/technology/frontend/github/kun-github-issue-template',
               },
+              {
+                text: '为项目添加 ESLint 和 typecheck 的 GitHub 工作流',
+                link: '/technology/frontend/github/kun-github-workflow-lint-check',
+              },
             ],
           },
           {
