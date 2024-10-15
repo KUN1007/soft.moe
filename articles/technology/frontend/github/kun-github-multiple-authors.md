@@ -31,3 +31,9 @@ commit
 ``` shell
 ~ git push origin master
 ```
+
+## 感谢凑妈的指导
+
+感谢我的好朋友[凑妈](https://asukaminato.eu.org/)的指导
+
+肯定还有不对或者尚待改进的地方，欢迎联系我指出我的错误，大家的每一次纠错都是对我的最大帮助，谢谢
