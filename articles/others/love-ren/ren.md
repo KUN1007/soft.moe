@@ -108,6 +108,4 @@
 > [SWEET&TEA 官网](http://sweet.clearrave.co.jp/karehana/)
 
 
-游戏下载？
-
-我们这里肯定是不行的 www，可以去真红姐姐的小站 [`shinnku.com`](https://www.shinnku.com/)
+[游戏下载？](https://www.kungal.com/zh-cn/galgame/1)
