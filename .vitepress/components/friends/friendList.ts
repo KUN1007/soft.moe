@@ -53,7 +53,7 @@ export const friendList: FriendList[] = [
   {
     avatar: '/avatar/non_hana.webp',
     name: 'non_hana',
-    link: 'https://nonhana.xyz/',
+    link: 'https://www.greyflowers.moe/',
   },
   {
     avatar: '/avatar/この世界最後の雨.webp',
@@ -99,5 +99,10 @@ export const friendList: FriendList[] = [
     avatar: '/avatar/86.webp',
     name: '86',
     link: 'https://hachiroku8620.blogspot.com/',
+  },
+  {
+    avatar: '/avatar/hibiki.webp',
+    name: 'Hibiki cyoyc',
+    link: 'https://blog.shigure.ametoki.moe',
   },
 ]
