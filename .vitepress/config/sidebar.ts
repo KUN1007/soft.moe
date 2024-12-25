@@ -395,6 +395,10 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
             text: '网站源站 ip 泄漏怎么办',
             link: 'technology/deploy/ip-leak',
           },
+          {
+            text: '使用 Cloudflare Workers 实现 B2 私有存储桶文件下载',
+            link: 'technology/deploy/r2-cf-worker',
+          },
         ],
       },
       {
