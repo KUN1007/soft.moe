@@ -484,6 +484,16 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
         ],
       },
       {
+        text: 'Functional Programming',
+        collapsed: false,
+        items: [
+          {
+            text: 'Mostly adequate guide to FP 摸鱼笔记',
+            link: '/technology/functional-programming/mostly-adequate-guide',
+          },
+        ],
+      },
+      {
         text: 'Production',
         collapsed: false,
         items: [
