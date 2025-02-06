@@ -105,4 +105,9 @@ export const friendList: FriendList[] = [
     name: 'Hibiki cyoyc',
     link: 'https://blog.shigure.ametoki.moe',
   },
+  {
+    avatar: '/avatar/devseed.webp',
+    name: 'devseed',
+    link: 'https://blog.schnee.moe/',
+  },
 ]
