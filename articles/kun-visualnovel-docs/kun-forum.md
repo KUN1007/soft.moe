@@ -109,10 +109,6 @@ KUN Visual Novel (鲲 Galgame) 是一个 Visual Novel (Galgame) 论坛。它的�
 
 Telegram: https://t.me/KUNForum
 
-Tencent QQ: 872839714
-
 ### 交流群组，Galgame 相关讨论，萌萌聊天
 
 Telegram: https://t.me/kungalgame
-
-Tencent QQ: 714254203
