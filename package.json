@@ -1,7 +1,7 @@
 {
   "name": "kun-blog",
   "description": "KUN's moe blog, KUN IS THE CUTEST!",
-  "packageManager": "pnpm@9.0.4",
+  "packageManager": "pnpm@10.4.1",
   "package-manager-strict": false,
   "author": {
     "name": "kun",
