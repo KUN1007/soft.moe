@@ -78,7 +78,7 @@ export const friendList: FriendList[] = [
   {
     avatar: '/avatar/Canmi.webp',
     name: 'Canmi',
-    link: 'https://canmi21.github.io/',
+    link: 'https://arc.canmi.icu/',
   },
   {
     avatar: '/avatar/senku.webp',
