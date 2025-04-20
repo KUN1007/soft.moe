@@ -115,4 +115,9 @@ export const friendList: FriendList[] = [
     name: 'NekoTsukyan',
     link: 'https://web.mangetusya.org/',
   },
+  {
+    avatar: '/avatar/asuna.webp',
+    name: 'Asuna',
+    link: 'https://saop.cc',
+  },
 ]
