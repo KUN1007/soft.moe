@@ -53,7 +53,7 @@ export const friendList: FriendList[] = [
   {
     avatar: '/avatar/non_hana.webp',
     name: 'non_hana',
-    link: 'https://www.greyflowers.moe/',
+    link: 'https://caelum.moe/',
   },
   {
     avatar: '/avatar/この世界最後の雨.webp',
