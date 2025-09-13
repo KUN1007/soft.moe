@@ -120,4 +120,14 @@ export const friendList: FriendList[] = [
     name: 'Asuna',
     link: 'https://saop.cc',
   },
+  {
+    avatar: '/avatar/bikari.svg',
+    name: '山吹色御守',
+    link: 'https://saop.cc',
+  },
+  {
+    avatar: '/avatar/zhilu.webp',
+    name: '纸鹿本鹿',
+    link: 'https://blog.zhilu.site/',
+  },
 ]
