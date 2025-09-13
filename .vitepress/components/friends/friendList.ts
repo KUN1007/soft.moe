@@ -123,7 +123,7 @@ export const friendList: FriendList[] = [
   {
     avatar: '/avatar/bikari.svg',
     name: '山吹色御守',
-    link: 'https://saop.cc',
+    link: 'https://archive.bikari.top/',
   },
   {
     avatar: '/avatar/zhilu.webp',
